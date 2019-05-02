@@ -6,25 +6,19 @@ _date_ = "03/05/2019"
 """
 
 
+# !/usr/bin/python3
 class ListADT:
 
-    def __init__(self, size):
+    def __init__(self, size = 35):
         """
 
         :param size:
         """
+        if size < 35:
+            size = 35
         self.the_array = [None] * size
         self.length = 0
         self.size = size
-
-    def __init__(self):
-        """
-
-               :param size:
-               """
-
-        self.the_array = [None] * 35
-        self.length = 0
 
     def __str__(self):
         """
@@ -86,25 +80,38 @@ class ListADT:
                 if other[i] != self.the_array[i]:
                     return False
             return True
+    def resize(self):
+        if self.is_full():
+            new_size = round(self.size*(1.6))+ self.size
+            new_the_array = [None]* new_size
+        elif (1/4 * self.size > len(self) and self.size >= 70):
+            new_size = round(self.size*(0.5))
+            new_the_array = [None]* new_size
+
+
+
+        for i in range(len(self)):
+                new_the_array[i] = self.the_array[i]
+        self.size = new_size
+        self.the_array = new_the_array
+
+
 
     def insert(self, index, item):
         """
         qUESTION ABOUT THE APPEND OR INSERT IN TH EBETWEEN LAST AND SECOND LAST ELEMENT FOR THE LAST INDEX OR -1
         """
-        if index <= self.length and index >= (-self.length):
-
-            if index < 0:
-                index = self.length + index
-            value = self.the_array[index]
-            for i in range(index, self.length):
-                temp = self.the_array[i + 1]
-                self.the_array[i + 1] = value
-                value = temp
-
-            self.the_array[index] = item
-            self.length += 1
-        else:
+        if index > len(self) or index < (-len(self)) - 1:
             raise IndexError()
+        if self.is_full():
+            self.resize()
+
+        if index < 0:
+            index = self.length + 1 + index
+        for i in range(len(self) - 1, index - 1, -1):
+            self.the_array[i + 1] = self.the_array[i]
+        self.the_array[index] = item
+        self.length += 1
 
     def delete(self, index):
         """
@@ -112,17 +119,19 @@ class ListADT:
         :param index:
         :return:
         """
-        if index < self.length and index >= (-self.length):
-            if index < 0:
-                index = self.length + index
-            found = self.the_array[index]
-            for i in range(index, self.length - 1):
-                self.the_array[i] = self.the_array[i + 1]
-            self.length -= 1
-            return found
-
-        else:
+        if index > len(self) or index < (-len(self)) - 1:
             raise IndexError()
+
+        if index < 0:
+            index = self.length + index
+        found = self.the_array[index]
+        for i in range(index+1, len(self), 1):
+            self.the_array[i-1] = self.the_array[i]
+        self.length -= 1
+        if(1/4 * self.size > len(self) and self.size >= 70):   # Checking for the resize
+                self.resize()
+        return found
+
 
     def is_empty(self):
         """
@@ -136,7 +145,7 @@ class ListADT:
 
         :return:
         """
-        return False
+        return self.length == len(self.the_array)
 
     def __contains__(self, item):
         """
@@ -155,20 +164,13 @@ class ListADT:
         :param item:
         :return:
         """
+        if self.is_full():
+            self.resize()
         self.the_array[self.length] = item
         self.length += 1
 
-        if self.length == self.size:
-                new_size = round(self.size*(1.6)) + self.size
-                new_the_array = [None]*new_size
-
-                for i in range(self.length):
-                    new_the_array[i] = self.the_array[i]
-                self.size = new_size
-                self.the_array = new_the_array
-        else:
-                raise Exception('Size is less than 35')
-
+        if(1/4 * self.size > len(self) and self.size >= 70):
+            self.resize()
     def unsafe_set_array(self, array, length):
         """
         UNSAFE: only to be used during testing to facilitate it!! DO NOT USE FOR ANYTHING ELSE
@@ -180,3 +182,21 @@ class ListADT:
 
         self.the_array = array
         self.length = length
+
+p = ListADT(12)
+print(p.size)
+for i in range(9):
+    p.append(i)
+print(p.size)
+print(p.the_array)
+for i in range(1):
+ size = p.delete(0)
+
+
+
+#for i in range(0, 15,1):
+   # p.delete(i)
+
+print(p.the_array)
+print(len(p))
+print(p.size)
