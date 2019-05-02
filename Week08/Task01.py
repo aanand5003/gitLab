@@ -80,15 +80,14 @@ class ListADT:
                 if other[i] != self.the_array[i]:
                     return False
             return True
+
     def resize(self):
         if self.is_full():
-            new_size = round(self.size*(1.6))+ self.size
-            new_the_array = [None]* new_size
-        elif (1/4 * self.size > len(self) and self.size >= 70):
+            new_size = round(self.size*(1.6))
+            new_the_array = [None] * new_size
+        elif 1/4 * self.size > len(self) and self.size >= 70:
             new_size = round(self.size*(0.5))
-            new_the_array = [None]* new_size
-
-
+            new_the_array = [None] * new_size
 
         for i in range(len(self)):
                 new_the_array[i] = self.the_array[i]
@@ -128,10 +127,9 @@ class ListADT:
         for i in range(index+1, len(self), 1):
             self.the_array[i-1] = self.the_array[i]
         self.length -= 1
-        if(1/4 * self.size > len(self) and self.size >= 70):   # Checking for the resize
+        if 1/4 * self.size > len(self) and self.size >= 70:   # Checking for the resize
                 self.resize()
         return found
-
 
     def is_empty(self):
         """

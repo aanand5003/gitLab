@@ -30,10 +30,11 @@ class ListADT:
 
     def __len__(self):
         """
-         Returns the number of elements in the the_array
-        :param self: The ListADT class
-        :return: the length of the the_array (self.length) or 0
-        :complexity: he best case is O(1) and the worst case is 0(1)
+        Returns the length of the list.
+
+        :param          the_list data structure
+        :return         the length of the list
+        :complexity     best and worst case: O(1)
         """
         if self.is_empty():
             return 0
@@ -42,8 +43,8 @@ class ListADT:
             return value
     def __getitem__(self, index):
         """
-           Returns an item at a given position in the list.
-        :param self:the_list data structure
+        Returns an item at a given position in the list.
+        :param self: the_list data structure
         :param index: It should be an integer value.
         :return: the item at index in the_array
         """
@@ -58,38 +59,38 @@ class ListADT:
 
     def __setitem__(self, index, item):
         """
-
-        :param self:
-        :param index:
-        :param item:
-        :return:
+         Sets the value at index in the list to be item
+        :param self: the_list data structure
+        :param index: It should be an integer value.
+        :param item:  The value to be set at that index
+        @complexity: best is O(length) and worst case O(1):
         """
 
-        if index < self.length  and index >= (-self.length):
+        if index < self.length and index >= (-self.length):
             self.the_array[index] = item
         else:
                 raise IndexError()
 
     def __eq__(self, other):
-       if len(other) == len(self):
+        """
+        Returns True if this list is equivalent to other otherwise return FALSE.
+        :param other: the list_data type
+        :return: The Boolean value for the equality of the given array and the self array.
+        """
+        if len(other) == len(self):
            for i in range(len(self)):
                if other[i] != self.the_array[i]:
                    return False
            return True
 
-
-
-
-
-
-
-
-
-
     def insert (self, index, item):
         """
-        qUESTION ABOUT THE APPEND OR INSERT IN TH EBETWEEN LAST AND SECOND LAST ELEMENT FOR THE LAST INDEX OR -1
+         Inserts the given item at the given position in the list.
+        :param index: An integer value
+        :param item:  The value which is going to inserted in the the array
+        @complexity:  best is O(length) and worst case O(1):
         """
+
         if index > len(self) or index < (-len(self))-1:
             raise IndexError()
         if self.is_full():
@@ -105,8 +106,13 @@ class ListADT:
     def delete(self, index):
         """
 
-        :param index:
-        :return:
+        Deletes the first appearance (if any) of the input item.
+
+        :param      the_list data structure
+        :param      inex of the item to be deleted
+        :return     Return  item if it is the deleted.
+        :post       if item was in list, list has one fewer elements
+        :complexity best and worst case: O(length)
         """
         if index < self.length and index >= (-self.length):
             if index < 0:
@@ -118,36 +124,45 @@ class ListADT:
             return found
         else:
             raise IndexError()
+
     def is_empty(self):
         """
+        Determines if the list has any elements.
 
-        :return:
+        :param          the_list data structure
+        :return         false if list has elements, true if empty
+        :complexity     best and worst case: O(1)
         """
         return self.length == 0
 
     def is_full(self):
         """
+        Determines whether the list is full.
+        Since it is implemented with arrays, it can get full.
 
-        :return:
+         @param      the_list data structure
+         @return     true is the list is full, false otherwise
+         @complexity best and worst case: O(1)
         """
         return self.length == len(self.the_array)
 
     def __contains__(self, item):
         """
-
-        :param item:
-        :return:
+        Check the given item is contain in the list data structure.
+        :param item: The value of the to be checked in the the list data structure
+        :return: The Boolean Value after the checking the item.
+        @complexity: The best case(1) and the worst case O(m).
         """
         for i in range(self.length):
             if item == self.the_array[i]:
                 return True
         return False
- 
+
     def append(self, item):
         """
-
-        :param item:
-        :return:
+        :param:         new_item to add to this list
+        @post           raise expection when list is full.
+        @complexity     best and worst case: O(1)
         """
         if not self.is_full():
             self.the_array[self.length] = item
