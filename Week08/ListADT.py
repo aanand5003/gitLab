@@ -20,7 +20,7 @@ class ListADT:
         Returns a string representation of the list
         :param self: The ListADT class
         :return:  String of List item having one item per line.
-        :complexity: the best case is O(1) and the worst case would be the O(self.length)
+        :complexity: the best case the worst case would be the O(N)
         """
         word = ""
         if not self.is_empty():
@@ -82,6 +82,8 @@ class ListADT:
                if other[i] != self.the_array[i]:
                    return False
            return True
+        else:
+            return False
 
     def insert (self, index, item):
         """
@@ -181,14 +183,3 @@ class ListADT:
 
         self.the_array = array
         self.length = length
-
-
-p = ListADT()
-k = ListADT(35)
-p.append(0)
-p.append(1)
-p.append(2)
-k.append(1)
-p.insert(-4,11)
-print(p.the_array)
-print(k.the_array)

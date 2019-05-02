@@ -11,21 +11,28 @@ class ListADT:
 
     def __init__(self, size = 35):
         """
-
-        :param size:
+         Creates an empty list with given size, and length 0.
+        :param size: It should be an Integer.
+        :complexity:  best and worst case: the complexity of [None]*size, which it is
+                             probably O(size)
         """
+        try:
+            size = int(size)
+        except:
+            raise(" Size is not a number")
         if size < 35:
-            size = 35
+           size = 35
         self.the_array = [None] * size
         self.length = 0
-        self.size = size
 
     def __str__(self):
         """
-
-        :param self:
-        :return:
+           Returns a string representation of the list
+          :param self: The ListADT class
+          :return:  String of List item having one item per line.
+          :complexity: the best case the worst case would be the O(N)
         """
+
         word = ""
         if self.is_empty():
             return word
@@ -36,9 +43,11 @@ class ListADT:
 
     def __len__(self):
         """
+        Returns the length of the list.
 
-        :param self:
-        :return:
+        :param          the_list data structure
+        :return         the length of the list
+        :complexity     best and worst case: O(1)
         """
         if self.is_empty():
             return 0
@@ -48,10 +57,10 @@ class ListADT:
 
     def __getitem__(self, index):
         """
-
-        :param self:
-        :param index:
-        :return:
+        Returns an item at a given position in the list.
+        :param self: the_list data structure
+        :param index: It should be an integer value.
+        :return: the item at index in the_array
         """
         if index <= self.length and index >= (-self.length):
             item = self.the_array[index]
@@ -62,11 +71,11 @@ class ListADT:
 
     def __setitem__(self, index, item):
         """
-
-        :param self:
-        :param index:
-        :param item:
-        :return:
+         Sets the value at index in the list to be item
+         :param self: the_list data structure
+         :param index: It should be an integer value.
+         :param item:  The value to be set at that index
+         @complexity: best is O(length) and worst case O(1):
         """
 
         if index < self.length and index >= (-self.length):
@@ -75,30 +84,43 @@ class ListADT:
             raise IndexError()
 
     def __eq__(self, other):
+        """
+        Returns True if this list is equivalent to other otherwise return FALSE.
+        :param other: the list_data type
+        :return: The Boolean value for the equality of the given array and the self array.
+        """
         if len(other) == len(self):
             for i in range(len(self)):
                 if other[i] != self.the_array[i]:
                     return False
             return True
+        else:
+            return False
 
     def resize(self):
+        """
+        Increase or Decrease the size according the call
+        @Complexity: The best and the Worst case is O(n)
+        """
         if self.is_full():
-            new_size = round(self.size*(1.6))
+            new_size = round(len(self.the_array)*(1.6))
             new_the_array = [None] * new_size
-        elif 1/4 * self.size > len(self) and self.size >= 70:
-            new_size = round(self.size*(0.5))
+        elif 1/4 * len(self.the_array) > len(self) and len(self.the_array) >= 70:
+            new_size = round(len(self.the_array)*(0.5))
             new_the_array = [None] * new_size
 
         for i in range(len(self)):
                 new_the_array[i] = self.the_array[i]
-        self.size = new_size
         self.the_array = new_the_array
 
 
 
     def insert(self, index, item):
         """
-        qUESTION ABOUT THE APPEND OR INSERT IN TH EBETWEEN LAST AND SECOND LAST ELEMENT FOR THE LAST INDEX OR -1
+        Inserts the given item at the given position in the list.
+        :param index: An integer value
+        :param item:  The value which is going to inserted in the the array
+        @complexity:  best is O(length) and worst case O(1):
         """
         if index > len(self) or index < (-len(self)) - 1:
             raise IndexError()
@@ -115,8 +137,13 @@ class ListADT:
     def delete(self, index):
         """
 
-        :param index:
-        :return:
+        Deletes the item from the given index.
+
+        :param      the_list data structure
+        :param      inex of the item to be deleted
+        :return     Return  item if it is the deleted.
+        :post       if item was in list, list has one fewer elements
+        :complexity best and worst case: O(length)
         """
         if index > len(self) or index < (-len(self)) - 1:
             raise IndexError()
@@ -127,29 +154,37 @@ class ListADT:
         for i in range(index+1, len(self), 1):
             self.the_array[i-1] = self.the_array[i]
         self.length -= 1
-        if 1/4 * self.size > len(self) and self.size >= 70:   # Checking for the resize
+        if 1/4 * len(self.the_array) > len(self) and len(self.the_array) >= 70:   # Checking for the resize
                 self.resize()
         return found
 
     def is_empty(self):
         """
+        Determines if the list has any elements.
 
-        :return:
+        :param          the_list data structure
+        :return         false if list has elements, true if empty
+        :complexity     best and worst case: O(1)
         """
         return self.length == 0
 
     def is_full(self):
         """
+        Determines whether the list is full.
+        Since it is implemented with arrays, it can get full.
 
-        :return:
+         @param      the_list data structure
+         @return     true is the list is full, false otherwise
+         @complexity best and worst case: O(1)
         """
         return self.length == len(self.the_array)
 
     def __contains__(self, item):
         """
-
-        :param item:
-        :return:
+        Check the given item is contain in the list data structure.
+        :param item: The value of the to be checked in the the list data structure
+        :return: The Boolean Value after the checking the item.
+        @complexity: The best case(1) and the worst case O(m).
         """
         for i in range(self.length):
             if item == self.the_array[i]:
@@ -158,16 +193,17 @@ class ListADT:
 
     def append(self, item):
         """
-
-        :param item:
-        :return:
+        :param:         new_item to add to this list
+        @post           raise expection when list is full.
+        @complexity     best and worst case: O(1)
         """
         if self.is_full():
+
             self.resize()
         self.the_array[self.length] = item
         self.length += 1
 
-        if(1/4 * self.size > len(self) and self.size >= 70):
+        if(1/4 * len(self.the_array) > len(self) and len(self.the_array) >= 70):
             self.resize()
     def unsafe_set_array(self, array, length):
         """
@@ -181,20 +217,5 @@ class ListADT:
         self.the_array = array
         self.length = length
 
-p = ListADT(12)
-print(p.size)
-for i in range(9):
-    p.append(i)
-print(p.size)
-print(p.the_array)
-for i in range(1):
- size = p.delete(0)
 
 
-
-#for i in range(0, 15,1):
-   # p.delete(i)
-
-print(p.the_array)
-print(len(p))
-print(p.size)
