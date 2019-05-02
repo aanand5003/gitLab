@@ -23,7 +23,7 @@ def test_task():
 
 def main():
     try:
-        print ("Testing the test_task")
+        print ("Testing read_text_file")
         test_task()
     except Exception as e:
         print("Error, unexpected exception: ", e)

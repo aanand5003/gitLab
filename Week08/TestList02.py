@@ -84,7 +84,15 @@ def test_insert():
         print("Should have raised IndexError")
     except IndexError:
             True
-
+    try:
+        x.insert(1, 2)
+    except:
+        True
+    x.unsafe_set_array([None,None,None], 1)
+    try:
+        x.insert(0,2)
+    except:
+        True
 def test_delete():
     x = ListADT()
     x.unsafe_set_array([1, 2, 5, 6, 7, None, None], 5)
@@ -100,6 +108,7 @@ def test_delete():
         print("Should have raised IndexError")
     except IndexError:
         True
+
 def test_resize():
     x = ListADT()
     size_x = 10
