@@ -33,6 +33,16 @@ def test_task():
     except IndexError:
         True
 
+    list_2 = read_text_file("own.txt")
+    assert len(list_2) != None, "Should be true but length of the list is None"
+    k = open("own.txt", "r")
+    line_2 = k.readline()
+    number_line_2 = 0
+    while line_2:
+        line_2 = k.readline()
+        number_line_2 += 1
+    k.close()
+    assert len(list_2) == number_line_2, " Should be True but the length of list =" + str(len(list))
 
 def main():
     try:

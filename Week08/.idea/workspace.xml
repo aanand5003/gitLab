@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c338c86-576a-4d2f-93b4-467983d4b580" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/TestList02.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestList02.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task03.py" beforeDir="false" afterPath="$PROJECT_DIR$/task03.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test03.py" beforeDir="false" afterPath="$PROJECT_DIR$/test03.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,11 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Task01.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+            <state relative-caret-position="-204">
+              <caret line="16" column="45" lean-forward="true" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -41,20 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test03.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TestList.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="133" selection-start-line="133" selection-end-line="137" selection-end-column="7" />
+            <state relative-caret-position="544">
+              <caret line="32" column="22" lean-forward="true" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -110,13 +99,13 @@
         <option value="$PROJECT_DIR$/ListADT.py" />
         <option value="$PROJECT_DIR$/TestList.py" />
         <option value="$PROJECT_DIR$/Task01.py" />
-        <option value="$PROJECT_DIR$/test03.py" />
         <option value="$PROJECT_DIR$/TestList02.py" />
         <option value="$PROJECT_DIR$/task03.py" />
+        <option value="$PROJECT_DIR$/test03.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="952" />
     <option name="width" value="977" />
     <option name="height" value="1038" />
@@ -143,7 +132,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.TestList02">
+  <component name="RunManager" selected="Python.test03">
     <configuration name="Task01" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Week08" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -251,8 +240,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.TestList02" />
         <item itemvalue="Python.test03" />
+        <item itemvalue="Python.TestList02" />
         <item itemvalue="Python.TestList" />
         <item itemvalue="Python.Task01" />
         <item itemvalue="Python.task03" />
@@ -273,8 +262,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="762" y="0" width="781" height="830" extended-state="0" />
-    <editor active="true" />
+    <frame x="762" y="0" width="781" height="830" extended-state="1" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.123595506" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -371,13 +359,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test03.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/task03.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -394,8 +375,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Task01.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+        <state relative-caret-position="-204">
+          <caret line="16" column="45" lean-forward="true" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test03.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="22" lean-forward="true" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
         </state>
       </provider>
     </entry>
