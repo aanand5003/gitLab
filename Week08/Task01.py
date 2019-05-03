@@ -99,14 +99,17 @@ class ListADT:
 
     def resize(self):
         """
-        Increase or Decrease the size according the call
+        Increase or Decrease the size according to the call of the function
         @Complexity: The best and the Worst case is O(n)
         """
         if self.is_full():
             new_size = round(len(self.the_array)*(1.6))
             new_the_array = [None] * new_size
-        elif 1/4 * len(self.the_array) > len(self) and len(self.the_array) >= 70:
-            new_size = round(len(self.the_array)*(0.5))
+        elif 1/4 * len(self.the_array) > len(self):
+            if 1/4 * len(self.the_array) < 35:
+                new_size = 35
+            elif  1/4 * len(self.the_array) >= 35:
+                new_size = round(len(self.the_array)*(0.5))
             new_the_array = [None] * new_size
 
         for i in range(len(self)):
@@ -154,7 +157,7 @@ class ListADT:
         for i in range(index+1, len(self), 1):
             self.the_array[i-1] = self.the_array[i]
         self.length -= 1
-        if 1/4 * len(self.the_array) > len(self) and len(self.the_array) >= 70:   # Checking for the resize
+        if 1/4 * len(self.the_array) > len(self):
                 self.resize()
         return found
 
@@ -203,8 +206,9 @@ class ListADT:
         self.the_array[self.length] = item
         self.length += 1
 
-        if(1/4 * len(self.the_array) > len(self) and len(self.the_array) >= 70):
+        if 1/4 * len(self.the_array) > len(self):
             self.resize()
+
     def unsafe_set_array(self, array, length):
         """
         UNSAFE: only to be used during testing to facilitate it!! DO NOT USE FOR ANYTHING ELSE
@@ -216,6 +220,7 @@ class ListADT:
 
         self.the_array = array
         self.length = length
+
 
 
 

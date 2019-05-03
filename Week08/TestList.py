@@ -2,6 +2,11 @@
 from ListADT import *
 
 def test_len():
+    """
+     Test function to test len method of the ListADT
+    @post: Works without any error and exception if method len working fine
+    @complexity: The best and worst case is  O(1)
+    """
     x = ListADT()
     assert len(x) == 0, "Length should be 0 but is " + str(len(x))
     x.insert(0, 2)
@@ -10,6 +15,11 @@ def test_len():
     assert len(x) == 11,"Length should be 11 but is" + str(len(x))
 
 def test_str():
+    """
+    Test function to test str method of the ListADT
+    @post: Works without any error and exception if method str working fine
+    @complexity: The best O(1) and worst case is  O(M) where M is the length of the string
+    """
     x = ListADT()
     assert str(x) == "", "Should be empty string but it is" + str(x)
     x.insert(0, 2)
@@ -18,6 +28,12 @@ def test_str():
     assert str(x) == "1\n2\n3\n", "Should be a 1 2 3 string but it is" + str(x)
 
 def test_contains():
+    """
+
+    Test function to test contain method of the ListADT
+    @post: Works without any error and exception if method contains working fine
+    @complexity: The best and the worst case O(n)
+    """
     x = ListADT()
     assert (2 in x) == False, "Should be False as x is empty but it is" + str(x)
     x.insert(0, 2)
@@ -26,10 +42,16 @@ def test_contains():
     assert (3 in x), "Should be True as x=[4,2,3] but it is" + str(x)
 
 def test_getitem():
+    """
+
+       Test function to test getitem method of the ListADT
+       @post: Works without any error and exception if method getitem working correctly
+       @complexity: The best and worst case O(1)
+    """
     x = ListADT()
     x.unsafe_set_array([4,3,5,6, None, None], 4)
     assert (x[0] == 4), "Should be 4 but it is" + str(x[0])
-    assert (x[1]== 3), "Should be 3 but it is" + str(x[1])
+    assert (x[1] == 3), "Should be 3 but it is" + str(x[1])
     assert (x[3] == 6), "Should be 6 but it is" + str(x[3])
     try:
         x[7] == 0
@@ -38,6 +60,12 @@ def test_getitem():
         True
 
 def test_setitem():
+    """
+
+       Test function to test setitem method of the ListADT
+       @post: Works without any error and exception if method setitem works correctly
+       @complexity: The best and the worst case O(1)
+    """
     x = ListADT()
     x.unsafe_set_array([4,3,5, None, None], 3)
     x[0]=10
@@ -53,6 +81,12 @@ def test_setitem():
         True
 
 def test_eq():
+    """
+
+    Test function to test __eq__ method of the ListADT
+    @post: Works without any error and exception if method __eq__ works correctly
+    @complexity: The best(1) and the worst case is 0(M) where M is the length of the string
+    """
     x = ListADT()
     x.unsafe_set_array([4, 3, 5, None, None], 3)
     y = ListADT()
@@ -61,7 +95,7 @@ def test_eq():
     z.unsafe_set_array([4, 5, 3, None, None], 3)
     w = ListADT()
     w.unsafe_set_array([4, 5, None, None], 2)
-    assert (x==y), "Should be True but it is" + "x="+ str(x) + "y=" + str(y)
+    assert (x == y), "Should be True but it is" + "x="+ str(x) + "y=" + str(y)
     assert (x != z), "Should be False but it is" + "x="+ str(x) + "z=" + str(z)
     assert (x != w), "Should be False but it is" + "x="+ str(x) + "w=" + str(w)
     try:
@@ -71,6 +105,12 @@ def test_eq():
         True
 
 def test_insert():
+    """
+    Test function to test insert method of the ListADT
+    @post: Works without any error and exception if method insert works correctly
+    @complexity: The worst case is O(1) and worst case O(length)
+    """
+
     x = ListADT()
     x.unsafe_set_array([1, 2, 5, 6, 7, None, None], 5)
     y = ListADT()
@@ -91,6 +131,12 @@ def test_insert():
             True
 
 def test_delete():
+    """
+    Test function to test delete method of the ListADT
+    @post: Works without any error and exception if method delete works correctly
+    @complexity:  : The complexity best and worst case: O(length)
+    """
+
     x = ListADT()
     x.unsafe_set_array([1, 2, 5, 6, 7, None, None], 5)
     y = ListADT()

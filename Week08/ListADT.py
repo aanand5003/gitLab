@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""
+_author_ = "Shourya Raj"
+_IdNumber_ = "28963555"
+_email_ = "sraj0008@student.monash.edu"
+_date_ = "03/05/2019"
+"""
 class ListADT:
 
     def __init__(self, size = 35):
@@ -76,6 +82,7 @@ class ListADT:
         Returns True if this list is equivalent to other otherwise return FALSE.
         :param other: the list_data type
         :return: The Boolean value for the equality of the given array and the self array.
+        @complexity: The best(1) and the worst case is 0(M)
         """
         if len(other) == len(self):
            for i in range(len(self)):
@@ -87,10 +94,10 @@ class ListADT:
 
     def insert (self, index, item):
         """
-         Inserts the given item at the given position in the list.
+        Inserts the given item at the given position in the list.
         :param index: An integer value
         :param item:  The value which is going to inserted in the the array
-        @complexity:  best is O(length) and worst case O(1):
+        @complexity:  The worst case is O(1) and worst case O(length)
         """
 
         if index > len(self) or index < (-len(self))-1:
