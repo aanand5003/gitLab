@@ -2,7 +2,7 @@ from Task01 import *
 
 def test_len():
     """
-      Test function to test len method of the ListADT
+     Test function to test len method of the ListADT
      @post: Works without any error and exception if method len working fine
      @complexity: The best and worst case is  O(1)
      """
@@ -162,7 +162,7 @@ def test_delete():
                                           new_capacity_y) + " Old capacity is  +" + str(capacity_y)
 
     assert (new_capacity_y == 35 ), "Should be True but new capacity=  " + str(new_capacity_y)
-    
+
 def test_append():
     """
     Test function to test append method of the ListADT
@@ -188,12 +188,17 @@ def test_append():
                                         new_capacity) + " Old capacity is  +" + str(capacity)
     y = ListADT(10)
     capacity_y = len(y.the_array)
-    for i in range(56):
+    for i in range(36):
         y.append(0)
     new_capacity_y = len(y.the_array)
 
     assert (capacity_y < new_capacity_y), "Should 1be True but new capacity= " + str(
                                           new_capacity_y) + " Old capacity is  +" + str(capacity_y)
+    assert(new_capacity_y == round(35*1.6)),"Should be True but new capcaity= " + str(new_capacity_y)
+    for i in range(36):
+        y.append(0)
+    new_capacity_y = len(y.the_array)
+    assert (new_capacity_y == round(35 * 1.6 * 1.6)), "Should be True but new capcaity= " + str(new_capacity_y)
 
 
 
@@ -202,18 +207,14 @@ def test_resize():
     Test the resize Method of the Task02 ListADT
     @post: Works without any error and exception if method resize works correctly
     @complexity:  : The best and the Worst case is O(n)
-    :return:
     """
     x = ListADT()
     size_x = 10
     array_x = [0]*size_x
 
     x.unsafe_set_array(array_x, 10)
-    try:
-      x.append(10)
-      x.append(11)
-    except:
-        True
+    x.append(10)
+    x.append(11)
     assert (x[10] == 10 and x[11] == 11), "Should be Value at x[10] is 10 and x[11] = 11 but is " +str(x[10]) +"and"+ str(x[11]) + "respectively"
     y = ListADT()
     size_y = 90
@@ -222,11 +223,15 @@ def test_resize():
     y.append(10)
     y.append(11)
     assert(x == y), " array 'x' should be equals to the array 'y' "
-    try:
-      x.insert(len(x), 12)
-      x.insert((len(x), 13))
-    except:
-        True
+
+    y = ListADT(10)
+    capacity_y = len(y.the_array)
+    for i in range(36):
+        y.append(0)
+    new_capacity_y = len(y.the_array)
+
+    assert (capacity_y < new_capacity_y), "Should 1be True but new capacity= " + str(
+                                          new_capacity_y) + " Old capacity is  +" + str(capacity_y)
 
 
 
