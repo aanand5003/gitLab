@@ -62,8 +62,14 @@ class ListADT:
         :param index: It should be an integer value.
         :return: the item at index in the_array
         """
+
         if index <= self.length and index >= (-self.length):
-            item = self.the_array[index]
+            if index <= self.length and index >= 0:
+               item = self.the_array[index]
+
+            elif index >= (-self.length) and index < 0:
+
+                item = self.the_array[self.length + index]
         else:
             raise IndexError()
 
@@ -80,6 +86,10 @@ class ListADT:
 
         if index < self.length and index >= (-self.length):
             self.the_array[index] = item
+
+        elif index >= (-self.length) and index < 0:
+
+            item = self.the_array[self.length + index]
         else:
             raise IndexError()
 
@@ -125,7 +135,7 @@ class ListADT:
         :param item:  The value which is going to inserted in the the array
         @complexity:  best is O(length) and worst case O(1):
         """
-        if index > len(self) or index < (-len(self)) - 1:
+        if index >= len(self) or index < (-len(self)) - 1:
             raise IndexError()
         if self.is_full():
             self.resize()

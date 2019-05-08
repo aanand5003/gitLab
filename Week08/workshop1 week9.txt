@@ -1,0 +1,73 @@
+ import java.awt.Color;
+
+ public class REctangleWs{
+ private int height;
+ private int width;
+ private java.awt.Color colour;
+
+ // Constructor  // no return  type neither void.
+  public RectangleWS(){
+     
+  }
+  
+  public RectangleWS(int intitHeight, int initWidth, int initR, int initG, initB, initAlpha){
+   setHeight(intitHeight);
+   setWidht(initWidth);
+
+   setColour(0,0,0,255);
+
+ }
+ 
+ // ACCESSORS
+ public int  getHeight(){
+
+         return height;
+
+}
+ public int getWidth(){
+         return width;
+}
+ public Color getColor(){
+        return colour; // privacy leak
+}
+//Mutator
+ 
+ public void setHeight(int newHeight){
+      boolean success = true;
+    if (newHeight < 0 || newHeight > 100)
+         success = false;
+        
+       
+    if (newHeight * getWidth() > 5000)
+          success = false;
+    if (success)
+          height = newHeigth;
+    return success;
+   }
+   public void newWidht(int newWidht{
+    if (newWidht> 0 && newWidht<= 100){
+        widht= newWidht; 
+    }
+   public void setColour(Color newColour){
+    colour = newColour;
+    }
+  public void setColour(int newR, int newG, int newB, int newAlpha){
+    
+   }
+//Others
+ public int perimeter(){
+  return 2*(getHeight() + getWidth());
+   }
+ public int area(){
+   return getHeight() + getWidth();
+  }
+ @override
+ public String toString(){
+  String state = "";
+      state += "Height/Width: "+ height + "/" + width + "\n";
+      state += "Colour: " + colour.toString() + "\n";
+      state += "Alpha: " + colour.getAlpha() + "\n";
+  return state;
+ 
+ }
+}

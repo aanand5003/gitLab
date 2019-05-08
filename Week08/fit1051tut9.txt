@@ -1,0 +1,69 @@
+public class PhonePlan{
+   private String name;
+   private int period;   // in month
+   private double totalCost; // in cents
+   private boolean dataRollover;
+  
+  public PhonePlan(){
+    setPeriod(12);
+    setDatarollover(true);
+   }
+  public PhonePlan(String name, int period, boolean rollover){
+  
+  setName(name);
+  setPeriod(period);
+  setDatarollover(rollover);
+  setTotalCost(0);
+
+  }
+
+  public getName(){
+
+      return name;
+  }
+  
+   public boolean setName(String name){
+   boolean result = false;
+   if(name.length() <= 50){
+      this.name = name;
+      result = true;
+    } 
+    return result;
+  }
+   private setPeriod(int period){
+      boolean result = false;
+      if(period >= 12 && period <= 48)
+    
+  
+  }
+  private setTotalCost(){
+
+  }
+  public boolean setDatarollover(boolean dataRollover ){
+
+  }
+
+ public  String toString(){
+  String state =  "The plan name: " + name;
+  state += ", the period of the contract is: " + period;
+  state += ", the total cost is (in dollar): "+ ConvertToDollar(totalCost);
+  state += ", is data rollover enable ? "+ dataRollover;
+  return state;
+ }
+
+  private double convertToDollar(int totalCost){
+  return totalCost/ 100.0;
+   
+ }
+  public void discount001(){
+  if( period >= 24 && !dataRollover){
+     setDataRollover(true); 
+     if(totalCost - supplyAmount > 100000){
+            setTotalCost(totalCost - supplyAmount);
+    }
+      else{
+            setTotalCost(100000)
+         }
+  }
+ }
+}
