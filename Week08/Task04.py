@@ -109,7 +109,9 @@ class Editor:
                                 self.insert_num_string(int(check[1]), array)
                         except (ValueError , IndexError):
 
-                               print("?")
+                                   print("?")
+                    elif check[0] == "search":
+                        self.search_string(check[1])
 
 
                     elif check[0] == "quit":
@@ -133,15 +135,39 @@ class Editor:
 
     def insert_num_string(self,number,list_of_strings):
         if number > 0:
-            position = number -1
-        elif number < 0:
+            position = number - 1
+        if number < 0:
             position = number
-        for i in range(0, len(list_of_strings),1):
+        for i in range(len(list_of_strings)):
 
-            position +=i
-            print(position)
             self.text_lines.insert(position,list_of_strings[i])
+            if number > 0:
+                position += 1
 
+    def search_string(self, string):
+        store = ListADT()
+        j = 0
+        step = False
+        for i in range(len(self.text_lines)):
+            j = 0
+            value = self.text_lines[i]
+            for k in range(len(self.text_lines[i])):
+                step = True
+                if string[j] == value[k]:
+
+
+                    if len(string) == j+1:
+                        store.append(i+1)
+
+                        print(i+1)
+                        break
+
+                    else:
+                        step = False
+                        j += 1
+                if step:
+                    #step = True
+                    j = 0
 
 
 
