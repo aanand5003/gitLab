@@ -38,7 +38,7 @@ class ListADT:
             return word
         else:
             for i in range(self.length):
-                word += str(self.the_array[i]) + "\n"
+                word += str(self.the_array[i])+"\n"
         return word
 
     def __len__(self):
