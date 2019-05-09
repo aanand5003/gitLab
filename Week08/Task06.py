@@ -55,12 +55,11 @@ class Editor:
                     elif check[0] == "print":
                         # for line 1 = index 0 hence
                         inside = True
-                        try:              # checking if there is item or not
-                            check[1]      # if not then append 0 to print all elements
-                        except:
-                            for i in range(len(self.text_lines)):
-                               print(self.text_lines[i])
-                            inside = False
+
+                        if (len(check) == 1):
+                          for i in range(len(self.text_lines)):
+                             print(self.text_lines[i])
+                          inside = False
 
                         if inside:
 
@@ -118,7 +117,7 @@ class Editor:
                                     if (string == "."):
                                         stop = False
                                     else:
-                                        array.append(string)
+                                        array.append(string + "\n")
                                 array.append(1)            # for insert 1
                                 arr = array
                                 if int(check[1]) > 0:
@@ -133,11 +132,33 @@ class Editor:
 
                                    print("?")
                     elif check[0] == "search":
-                        self.search_string(check[1])
+                        # Making an string
+                        word =""
+
+                        for i in range(len(check)-1):
+                            if(i == len(check)-2):
+                                word += check[i + 1]
+                            elif (i != len(check)-1 and len(check) > 2):
+                               word += check[i+1]+" "  # last element handle
+                            else:
+                                word +=check[i+1]
+
+                        try:
+                            value = self.search_string(word)
+
+                            if len(value) != 0:
+                                print("Given String appeared in the following line")
+                                for i in range(len(value)):
+                                    print(value[i])
+                            else:
+                                print("Give String dosen't appeard in the text")
+                        except:
+                            print("?")
+
+
 
                     elif check[0] == "undo":
-                           self.undo()
-
+                        value = self.undo()
                     elif check[0] == "quit":
                          exit = True
                     else:
@@ -177,24 +198,22 @@ class Editor:
         for i in range(len(self.text_lines)):
             j = 0
             value = self.text_lines[i]
-            for k in range(len(self.text_lines[i])-1):
-                step = True
+            if (len(value) - 1 >= len(string)):
 
-                if string == 
+               for k in range(len(self.text_lines[i])-1):
+                    step = True
+                    word = ""
+                    if k+len(string) <= len(value):
+                        for l in range(len(string)):
+                            index = k+l
+                            word += value[index]
+                        if string == word:
+                            store.append(i+1)
+
+                            break
+        return store
 
 
-                    if len(string) == j+1:
-                        store.append(i+1)
-
-                        print(i+1)
-                        break
-
-                    else:
-                        step = False
-                        j += 1
-                if step:
-                    #step = True
-                    j = 0
     def undo(self):
         array = self.text_Stack.pop()
         index = self.text_Stack.pop()

@@ -32,13 +32,13 @@ class ListADT:
           :return:  String of List item having one item per line.
           :complexity: the best case the worst case would be the O(N)
         """
-
+        
         word = ""
         if self.is_empty():
             return word
         else:
             for i in range(self.length):
-                word += str(self.the_array[i])+"\n"
+                word += str(self.the_array[i])+ "\n"
         return word
 
     def __len__(self):
