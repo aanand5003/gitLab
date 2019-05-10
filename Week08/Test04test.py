@@ -1,4 +1,4 @@
-from Task06 import*
+from Task04 import*
 """
 _author_ = "Shourya Raj"
 _IdNumber_ = "28963555"
@@ -9,21 +9,21 @@ _date_ = "10/05/2019"
 def delete_num_test():
     a = Editor()
 
-    a.read_filename("own.txt")
+    a.read_filename("story.txt")
     a.delete_num(-1)
 
     b = Editor()         # Testing with the negative number
-    b.read_filename("own.txt")
+    b.read_filename("story.txt")
 
     assert(a.text_lines[len(a.text_lines)- 1]  == b.text_lines[len(b.text_lines)-2]), "Should be equal but the delete function dosen't delete the element"
 
     # Testing to delete all element
-    a.read_filename("story.txt")
+    a.read_filename("own.txt")
     a.delete_num()
 
     assert(len(a.text_lines) == 0), "Should be equal to the zero but the line is equal to" + str(len(a.text_lines))
 
-    b.read_filename("story.txt")
+    b.read_filename("own.txt")
     try:
       b.delete_num(0)
       print("Should have raised an error because there is no zero line")

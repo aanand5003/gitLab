@@ -99,18 +99,17 @@ class Editor:
                         stop = True
                         try:
                             self.text_lines[int(check[1])]
-                            if (int(check[1]) == 0):       # check value zero
+                            if (int(check[1]) == 0):
                                 print("?")
                             else:
-                                array = ListADT()         # Making an list to store the input string value
+                                array = ListADT()
                                 while stop:
-                                    string = input()      
-                                    if (string == "."):   # terminate loop
+                                    string = input()
+                                    if (string == "."):
                                         stop = False
                                     else:
-                                        array.append(string + "\n")       # appending element
-                                array.append(1)            # insert 1 to check the it was insert function for undo
-
+                                        array.append(string + "\n")
+                                array.append(1)            # for insert 1
                                 arr = array
 
 
@@ -143,20 +142,6 @@ class Editor:
                                 print("Give String dosen't appeard in the text")
                         except:
                             print("?")
-
-
-
-                    elif check[0] == "undo":
-                        try:
-                           self.text_Stack.is_empty()
-
-                           value = self.undo()
-                        except Exception as error:
-                            print('?')
-                    elif check[0] == "quit":
-                         exit = True
-                    else:
-                        print("?")
 
     def read_filename(self, value):
         self.text_lines = read_text_file(value)
@@ -256,37 +241,3 @@ class Editor:
                             break
         return store
 
-
-    def undo(self):
-        """
-        @pre-condition: no input needed, just function calling
-        @post-condition: undo the most recent action
-        :return:
-        @complexity: best case: O(1)
-                        worst case: O(mn) where n is the length of the array and m is the index
-        """
-        array = self.text_Stack.pop()                   #
-        index = self.text_Stack.pop()
-
-        if (array[len(array)-1]) == 0:
-
-           list = ListADT()
-           item = array.delete(len(array)-1)
-
-           list.append(array)
-           list.append(item)
-
-
-           self.insert_num_string(index,list)
-
-
-        elif (array[len(array)-1]) == 1:
-            array.delete(len(array)-1)
-
-            for i in range (len(array)):
-
-
-                self.delete_num(index)
-
-editor = Editor()
-editor.menu()
