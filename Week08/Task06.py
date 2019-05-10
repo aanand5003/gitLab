@@ -15,7 +15,7 @@ class Editor:
         """
 
          @:param:
-         @complexity:
+         @complexity: worst and best case: O(1)
         """
         self.text_lines = ListADT();
         self.text_Stack = Stack();
@@ -166,45 +166,72 @@ class Editor:
 
 
     def print_num(self, num):
+        """
+        @pre-condition: input num will indicate which element in the array will be printed out
+        @post-condition: the element at the given index will be printed
+        @complexity: worst and best case: O(1)
+        :param num: the index of the array
+        :return: the element at the index
+        """
         if num > 0:
-
-            return (self.text_lines[num -1])
-
-
+            return (self.text_lines[num -1])            #return the element at num-1 as array start from 0 and the input from user start from 1
         elif num < 0:
-            return (self.text_lines[num])
+            return (self.text_lines[num])               #return the element at num as negative index start from the last element of the array
     def delete_num(self,num):
+        """
+        @pre-condition: input should be an integer that indicate the position of the element in the array to be deleted
+        @post-condition: the element at the given index will be deleted
+        @complexity: worst and best case: O(1)
+        :param num: index at which the element will be deleted
+        :return:
+        """
         if num > 0:
-            item = self.text_lines.delete(num-1)
+            item = self.text_lines.delete(num-1)                #deleting the element at the given index by calling delete function from ListADT
             print(item)
         elif num < 0:
-            self.text_lines.delete(num)
+            self.text_lines.delete(num)                         #deleting the element at the given index by calling delete function from ListADT
 
     def insert_num_string(self,number,list_of_strings):
+        """
+        @pre-condition: number that indicate where the string should insert from and the string that will be inserted
+        @post-condition: insert the string at the given index
+        @complexity: worst case: O(n) where n is the length of the list_of_string
+                        best case: O(1) the first element in the array
+        :param number: the index of the array
+        :param list_of_strings: what to insert at the given index
+        :return:
+        """
         if number > 0:
-            position = number - 1
+            position = number - 1               #array start from 0 not 1
         if number < 0:
-            position = number
-        for i in range(len(list_of_strings)-1):
+            position = number                   #otherwise, set number as position
+        for i in range(len(list_of_strings)-1):             #loop through the list of string
 
-            self.text_lines.insert(position,list_of_strings[i])
+            self.text_lines.insert(position,list_of_strings[i])         #inserting the string at the position
             if number > 0:
-                position += 1
+                position += 1                   #increase the position by 1
 
     def search_string(self, string):
+        """
+        @pre-condition: input should be a string that will be compared to each element in the array
+        @post-condition:
+        :param string: string that needed to search
+        :return: store
+        @complexity: worst case: O(mn^2) where n is the length of the text_line and m is the length of the string
+        """
         store = ListADT()
         j = 0
         step = False
-        for i in range(len(self.text_lines)):
+        for i in range(len(self.text_lines)):                       #loop through every elements inside the array
             j = 0
-            value = self.text_lines[i]
-            if (len(value) - 1 >= len(string)):
+            value = self.text_lines[i]                              #set value as the element at index i
+            if (len(value) - 1 >= len(string)):                     #check if length of the element at index i is longer than the given string since the given string can not be the same as element at index i if it is longer than that element
 
-               for k in range(len(self.text_lines[i])-1):
+               for k in range(len(self.text_lines[i])-1):           #loop through the string at index i
                     step = True
                     word = ""
                     if k+len(string) <= len(value):
-                        for l in range(len(string)):
+                        for l in range(len(string)):                #loop through the given string
                             index = k+l
                             word += value[index]
                         if string == word:
@@ -215,7 +242,14 @@ class Editor:
 
 
     def undo(self):
-        array = self.text_Stack.pop()
+        """
+        @pre-condition: no input needed, just function calling
+        @post-condition: undo the most recent action
+        :return:
+        @complexity: best case: O(1)
+                        worst case: O(mn) where n is the length of the array and m is the index
+        """
+        array = self.text_Stack.pop()                   #
         index = self.text_Stack.pop()
 
         if (array[len(array)-1]) == 0:

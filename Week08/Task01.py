@@ -32,7 +32,7 @@ class ListADT:
           :return:  String of List item having one item per line.
           :complexity: the best case the worst case would be the O(N)
         """
-        
+
         word = ""
         if self.is_empty():
             return word
@@ -158,8 +158,8 @@ class ListADT:
         :post       if item was in list, list has one fewer elements
         :complexity best and worst case: O(length)
         """
-        if index > len(self) or index < (-len(self)) - 1:
-            raise IndexError()
+        if index > len(self) or index < (-len(self)) - 1:       #check if the index is out of range or not
+            raise IndexError()                                  #raise error if index is out range
 
         if index < 0:
             index = self.length + index
@@ -179,7 +179,7 @@ class ListADT:
         :return         false if list has elements, true if empty
         :complexity     best and worst case: O(1)
         """
-        return self.length == 0
+        return self.length == 0                             #return true if the length is equal to zero, false otherwise
 
     def is_full(self):
         """
@@ -190,7 +190,7 @@ class ListADT:
          @return     true is the list is full, false otherwise
          @complexity best and worst case: O(1)
         """
-        return self.length == len(self.the_array)
+        return self.length == len(self.the_array)           #return true if the length is equal to the length of the array, false otherwise
 
     def __contains__(self, item):
         """
@@ -199,10 +199,10 @@ class ListADT:
         :return: The Boolean Value after the checking the item.
         @complexity: The best case(1) and the worst case O(m).
         """
-        for i in range(self.length):
-            if item == self.the_array[i]:
-                return True
-        return False
+        for i in range(self.length):                        #loop through the whole array
+            if item == self.the_array[i]:                   #check each element inseide the array and compare with the item
+                return True                                 #reture true if the element is the same as the item
+        return False                                        #return false otherwise
 
     def append(self, item):
         """
@@ -214,10 +214,10 @@ class ListADT:
 
             self.resize()
         self.the_array[self.length] = item
-        self.length += 1
+        self.length += 1                                        #increaseing the length of the array
 
         if 1/4 * len(self.the_array) > len(self):
-            self.resize()
+            self.resize()                                       #resize the array if the elements inside occupied less than 1/4 of the array
 
     def unsafe_set_array(self, array, length):
         """

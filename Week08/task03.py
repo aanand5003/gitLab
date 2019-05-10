@@ -24,8 +24,8 @@ def read_text_file(name):
         print("name should be an string")
 
     array_string = ListADT()
-    f = open(name, "r")
+    f = open(name, "r")                 #open file to be read
     for i in f:
-        array_string.append(i)
-    f.close()
+        array_string.append(i)          #adding each line into the array_stinring
+    f.close()                           #closing the file
     return array_string
