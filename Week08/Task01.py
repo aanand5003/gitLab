@@ -61,6 +61,7 @@ class ListADT:
         :param self: the_list data structure
         :param index: It should be an integer value.
         :return: the item at index in the_array
+         @Complexity: The best and the Worst case is O(1)
         """
 
         if index <= self.length and index >= (-self.length):
@@ -98,6 +99,7 @@ class ListADT:
         Returns True if this list is equivalent to other otherwise return FALSE.
         :param other: the list_data type
         :return: The Boolean value for the equality of the given array and the self array.
+         @Complexity: The best O(n) and the Worst case is O(m*n) where m is the length of the string
         """
         if len(other) == len(self):
             for i in range(len(self)):

@@ -144,6 +144,11 @@ class Editor:
                             print("?")
 
     def read_filename(self, value):
+        """
+          :param name: The String name of the file
+          @post: An ADT type of list.
+          @complexity: The best case and the worst case O(length) where length is the lines of the text file.
+        """
         self.text_lines = read_text_file(value)
     def print_num(self, num = "all"):
         """
