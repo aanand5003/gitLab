@@ -1,7 +1,7 @@
 from Task01 import *
 from task03 import *
 from stackADT import *
-import copy
+
 """
 _author_ = "Shourya Raj"
 _IdNumber_ = "28963555"
@@ -19,11 +19,11 @@ class Editor:
         """
         self.text_lines = ListADT();
         self.text_Stack = Stack();
-        self.length = 0;
+
 
     def menu(self):
         """
-        UI menu to the user to chose the options for the function.
+        UI menu to the user to chose the options for the function and proceed the function.
         :return:
 
         """
@@ -40,13 +40,13 @@ class Editor:
                 try:
                     command = check[0]
                 except IndexError:
-                    print("No input")
-                    step = False
+                   print("No input")
+                   step = False
                 if step:
                     if check[0] == "read" :
                         try:
 
-                           self.text_lines = read_text_file(check[1])
+                           self.read_filename(check[1])
 
 
                         except:
@@ -55,53 +55,44 @@ class Editor:
                     elif check[0] == "print":
                         # for line 1 = index 0 hence
                         inside = True
+                        try:
+                            if len(check) == 1:
+                                print(self.print_num())
+                                inside = False
 
-                        if (len(check) == 1):
-                          for i in range(len(self.text_lines)):
-                             print(self.text_lines[i])
-                          inside = False
+                            if inside:
 
-                        if inside:
-
-
-                                try:
-                                    if int(check[1]) == 0:
-                                        print("?")
-                                    else:
-                                        print(self.print_num(int(check[1])))
-                                except (ValueError, IndexError):
+                                if int(check[1]) == 0:
+                                    print("?")
+                                else:
+                                    print(self.print_num(int(check[1])))
+                        except (ValueError, IndexError):
 
                                     print("?")
 
                     elif check[0] == "delete":
                         inside = True
                         try:
-                            check[1]
-                        except IndexError:
-                            if len(self.text_lines) > 0:
-                                for i in range(len(self.text_lines)):
-                                    self.text_lines.delete(0)
-                            inside = False
+                            if len(check) == 1:
+                                self.delete_num()
+                                inside = False
 
-
-
-                        if inside:
-
-                            try:
-                                if int(check[1]) == 0:
-                                    print("?")
-                                else:
-                                    arr = ListADT()
-                                    self.text_Stack.push(int(check[1]))
-                                    if int(check[1]) > 0:
-
-                                        arr.append(self.text_lines[int(check[1])-1])
+                            if inside:
+                                    if int(check[1]) == 0:
+                                        print("?")
                                     else:
-                                        arr.append(self.text_lines[int(check[1])])
-                                    arr.append(0)               # for the delete 0
-                                    self.text_Stack.push(arr)
-                                    self.delete_num(int(check[1]))
-                            except(ValueError, IndexError):
+                                        arr = ListADT()
+                                        self.text_Stack.push(int(check[1]))
+                                        if int(check[1]) > 0:
+
+                                            arr.append(self.text_lines[int(check[1]) - 1])
+                                        else:
+                                            arr.append(self.text_lines[int(check[1])])
+                                        arr.append(0)  # for the delete 0
+                                        self.text_Stack.push(arr)
+                                        self.delete_num(int(check[1]))
+
+                        except(ValueError, IndexError):
                                 print("?")
 
                     elif check[0] == "insert":
@@ -120,17 +111,14 @@ class Editor:
                                         array.append(string + "\n")
                                 array.append(1)            # for insert 1
                                 arr = array
-                                if int(check[1]) > 0:
-                                    self.text_Stack.push(int(check[1]))
 
-                                else:
-                                    self.text_Stack.push(int(check[1]))
+
+                                self.text_Stack.push(int(check[1]))
                                 self.text_Stack.push(arr)
-
-                                self.insert_num_string(int(check[1]), array)
+                                self.insert_num_string(int(check[1]), array)  # changed here from array to array[0]
                         except (ValueError , IndexError):
+                                print("?")
 
-                                   print("?")
                     elif check[0] == "search":
                         # Making an string
                         word =""
@@ -158,26 +146,38 @@ class Editor:
 
 
                     elif check[0] == "undo":
-                        value = self.undo()
+                        try:
+                           self.text_Stack.is_empty()
+
+                           value = self.undo()
+                        except Exception as error:
+                            print('?')
                     elif check[0] == "quit":
                          exit = True
                     else:
                         print("?")
 
-
-    def print_num(self, num):
+    def read_filename(self, value):
+        self.text_lines = read_text_file(value)
+    def print_num(self, num = "all"):
         """
         @pre-condition: input num will indicate which element in the array will be printed out
         @post-condition: the element at the given index will be printed
         @complexity: worst and best case: O(1)
-        :param num: the index of the array
+        :param num: the index of the array and initial value 0 to print all value.
         :return: the element at the index
         """
-        if num > 0:
+
+        if num == "all":
+            return self.text_lines
+        elif num == 0:
+            raise Exception("No zero please")
+        elif num > 0:
             return (self.text_lines[num -1])            #return the element at num-1 as array start from 0 and the input from user start from 1
         elif num < 0:
             return (self.text_lines[num])               #return the element at num as negative index start from the last element of the array
-    def delete_num(self,num):
+
+    def delete_num(self,num = "all"):
         """
         @pre-condition: input should be an integer that indicate the position of the element in the array to be deleted
         @post-condition: the element at the given index will be deleted
@@ -185,11 +185,19 @@ class Editor:
         :param num: index at which the element will be deleted
         :return:
         """
-        if num > 0:
+        if num == "all":
+            if len(self.text_lines) > 0:
+                for i in range(len(self.text_lines)):
+                    self.text_lines.delete(0)
+        elif num == 0:
+            raise Exception("Not is range")
+        elif num > 0:
             item = self.text_lines.delete(num-1)                #deleting the element at the given index by calling delete function from ListADT
-            print(item)
+
         elif num < 0:
-            self.text_lines.delete(num)                         #deleting the element at the given index by calling delete function from ListADT
+            item = self.text_lines.delete(num)
+          #deleting the element at the given index by calling delete function from ListADT
+
 
     def insert_num_string(self,number,list_of_strings):
         """
@@ -201,11 +209,18 @@ class Editor:
         :param list_of_strings: what to insert at the given index
         :return:
         """
-        if number > 0:
+        if number == 0:
+            raise Exception("Can't add anything at zero line")
+        elif number > 0:
             position = number - 1               #array start from 0 not 1
-        if number < 0:
+        elif number < 0:
             position = number                   #otherwise, set number as position
-        for i in range(len(list_of_strings)-1):             #loop through the list of string
+
+        if (list_of_strings[-1] == 1):          # checking for the last bit == 1 ( 1 is to check the insert function happen that time)
+            length = len(list_of_strings)-1
+        else:
+            length = len(list_of_strings)
+        for i in range(length):                 #loop through the list of string without t
 
             self.text_lines.insert(position,list_of_strings[i])         #inserting the string at the position
             if number > 0:
@@ -224,10 +239,10 @@ class Editor:
         step = False
         for i in range(len(self.text_lines)):                       #loop through every elements inside the array
             j = 0
-            value = self.text_lines[i]                              #set value as the element at index i
-            if (len(value) - 1 >= len(string)):                     #check if length of the element at index i is longer than the given string since the given string can not be the same as element at index i if it is longer than that element
+            value = self.text_lines[i]                                 #set value as the element at index i
+            if (len(value) >= len(string)):   #)len(value(-1                  #check if length of the element at index i is longer than the given string since the given string can not be the same as element at index i if it is longer than that element
 
-               for k in range(len(self.text_lines[i])-1):           #loop through the string at index i
+               for k in range(len(self.text_lines[i])):  #-1          #loop through the string at index i
                     step = True
                     word = ""
                     if k+len(string) <= len(value):
@@ -259,16 +274,17 @@ class Editor:
 
            list.append(array)
            list.append(item)
-           print(list.the_array)
+
 
            self.insert_num_string(index,list)
 
 
         elif (array[len(array)-1]) == 1:
             array.delete(len(array)-1)
+
             for i in range (len(array)):
-                if index < 0:
-                   index+=1
+
+
                 self.delete_num(index)
 
 editor = Editor()

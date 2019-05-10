@@ -233,11 +233,3 @@ class ListADT:
 
 
 
-adt = ListADT()
-
-adt.append(1)
-for i in range(10):
-    adt.insert(0,1)
-for i in range(10):
-    adt.insert(4,3)
-print(adt.the_array)
