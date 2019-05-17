@@ -4,7 +4,7 @@ Email: sraj0008@student.monash.edu
 Updated on: 15/05
 """
 
-def fibbonacci(n):
+def fibbonacci(n, i=0):
     """
 
     :param n: An integer value should be greater and equals to the 0
@@ -12,7 +12,9 @@ def fibbonacci(n):
     """
     if n == 0 or n == 1:
         return n
-    return fibbonacci(n-1)+fibbonacci(n-2)
+    print("Number of occur: "+ str(i),"Value: " +str(n))
+    i+=1
+    return fibbonacci(n-1, i)+fibbonacci(n-2, i)
 
 
 def fib(n):
@@ -42,3 +44,8 @@ def fib_dp(n):
     for i in range(2, n + 1):
         mem[i] = mem[i - 1] + mem[i - 2]
     return mem[n]
+
+
+if __name__ == '__main__':
+
+  print("The value is "+str(fibbonacci(5)))
