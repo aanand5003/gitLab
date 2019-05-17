@@ -65,7 +65,7 @@ class ListADT:
         """
 
         if index <= self.length and index >= (-self.length):
-            if index >= (-self.length) and index < 0:
+            if index <= self.length and index >= 0:
                item = self.the_array[index]
 
             elif index >= (-self.length) and index < 0:
@@ -85,15 +85,15 @@ class ListADT:
          @complexity: best is O(length) and worst case O(1):
         """
 
-        if index >= (-self.length) and index < 0:
-
-            self.the_array[self.length + index] = item
-        elif index < self.length and index >= (-self.length):
+        if index < self.length and index >= (-self.length):
             self.the_array[index] = item
 
+        elif index >= (-self.length) and index < 0:
 
+            item = self.the_array[self.length + index]
         else:
             raise IndexError()
+
     def __eq__(self, other):
         """
         Returns True if this list is equivalent to other otherwise return FALSE.
@@ -117,7 +117,6 @@ class ListADT:
         if self.is_full():
             new_size = round(len(self.the_array)*(1.6))
             new_the_array = [None] * new_size
-
         elif 1/4 * len(self.the_array) > len(self):
             if 1/4 * len(self.the_array) < 35:
                 new_size = 35

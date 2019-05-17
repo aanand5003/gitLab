@@ -33,7 +33,7 @@ def test_undo():
     d = ListADT()
     c.append("Test2")
     c.append("Test3")
-
+    
     a.insert_num_string(2, c)
     a.delete_num(2)
     a.undo()

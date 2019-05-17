@@ -1,0 +1,8 @@
+hello
+world
+copy
+zero
+How are you?
+I am good.
+How about you?
+Cool!
