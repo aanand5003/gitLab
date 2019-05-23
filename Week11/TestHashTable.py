@@ -64,5 +64,8 @@ class TestHashTable(unittest.TestCase):
     with self.assertRaises(KeyError, msg="False positive from colliding key."):
       elt = x["defabc"]
 
+  def test_setitem(self):
+    
+
 if __name__ == '__main__':
   unittest.main()

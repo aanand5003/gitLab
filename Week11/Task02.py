@@ -43,16 +43,19 @@ def dictionary_function():
 
     for i in range(len(filename)):
         name = filename[i]
-        print(str(name)+ ": " +"\n")
+        print(str(name)+ ": ")
         print("b " + "  TableSize " + " end_time")
-        for j in range(len(Tablesize)):
-            hash_value = HashTable(Tablesize[j], b[j])
-            start_time = timeit.default_timer()
-            load_dictionary(hash_value, name)
-            end_time = timeit.default_timer() - start_time
-            end_time = round(end_time, 4)
+        for j in range(len(b)):
+            for k in range(len(Tablesize)):
+                hash_value = HashTable(Tablesize[k], b[j])
+                start_time = timeit.default_timer()
+                load_dictionary(hash_value, name)
+                end_time = timeit.default_timer() - start_time
+                end_time = round(end_time, 4)
+                print(str(b[j]) + "   " + str(Tablesize[k]) + " " + str(end_time))
+                value = hash_value.statistics()
 
-            print(str(b[j]) + " "+str(Tablesize[j]) +" "+ str(end_time))
-            hash_value.statistics()
+                print("Collision: "+ str(value[0]) + " Probe Total: " + str(value[1])+" probe_max: " + str(value[2])+ " rehash count: " + str(value[3]))
+
 
 dictionary_function()

@@ -88,8 +88,8 @@ class HashTable:
     def __contains__(self, key):
         """
 
-        :param key:
-        :return:
+        :param key: An string value provided by the user
+        :return: No return Value
         """
         position = self.hash(key)
         for _ in range(self.table_capacity):
@@ -103,8 +103,8 @@ class HashTable:
 
     def rehash(self):
         """
-
-        :return:
+        It increase the capacity and re-calcuate hash of each item according to the capacity
+        @complexity:
         """
         for i in range(len(self.primes)):
             if self.primes[i] > self.table_capacity * 2:
@@ -121,7 +121,9 @@ class HashTable:
         self.probe = 0
 
     def statistics(self):
-        print(self.probe_max)
-        print(self.probe_total)
-        print(self.rehash_count)
-        print(self.collision_count)
+        """
+
+        :return:
+        """
+        value = (self.collision_count, self.probe_total, self.probe_max, self.rehash_count)
+        return value
