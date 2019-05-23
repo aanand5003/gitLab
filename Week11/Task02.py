@@ -1,4 +1,4 @@
-from Task01 import *
+from Task03 import *
 import timeit
 """
 @name: shourya raj
@@ -44,14 +44,15 @@ def dictionary_function():
     for i in range(len(filename)):
         name = filename[i]
         print(str(name)+ ": " +"\n")
+        print("b " + "  TableSize " + " end_time")
         for j in range(len(Tablesize)):
             hash_value = HashTable(Tablesize[j], b[j])
             start_time = timeit.default_timer()
             load_dictionary(hash_value, name)
             end_time = timeit.default_timer() - start_time
             end_time = round(end_time, 4)
-            print( "b " + "  TableSize " + " end_time")
-            print(str(b[j]) + " "+str(Tablesize[j]) +" "+ str(end_time))
 
+            print(str(b[j]) + " "+str(Tablesize[j]) +" "+ str(end_time))
+            hash_value.statistics()
 
 dictionary_function()

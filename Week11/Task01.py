@@ -46,7 +46,6 @@ class HashTable:
             elif self.array[position][0] == key:
                  return self.array[position][1]
             else:
-
                 position = (position + 1) % self.table_capacity
         raise KeyError(key)
 
