@@ -23,7 +23,7 @@ class HashTable:
         self.probe = 0
         self.probe_total = 0
         self.rehash_count = 0
-        self.probe_array = []
+        #self.probe_array = []
         self.primes = [3, 7, 11, 17, 23, 29, 37, 47, 59, 71, 89, 107, 131, 163, 197, 239, 293, 353, 431, 521, 631, 761,
                           919, 1103, 1327, 1597, 1931, 2333, 2801, 3371, 4049, 4861, 5839, 7013, 8419, 10103, 12143, 14591,
                           17519, 21023, 25229, 30293, 36353, 43627, 52361, 62851, 75431, 90523, 108631, 130363, 156437,
@@ -73,6 +73,7 @@ class HashTable:
         @post_condition: Value would be assigned in the array
         """
         position = self.hash(key)
+        self.probe = 0
         if self.array[position] is not None:             # It's a collision if there is no space
             self.collision_count += 1
 
@@ -81,8 +82,8 @@ class HashTable:
            if self.array[position] is None:
                self.array[position] = (key, value)
                self.count += 1
-               self.probe_array.append(self.probe)
-               self.probe = 0
+               #self.probe_array.append(self.probe)
+
                return
            elif self.array[position][0] == key:
                 self.array[position] = (key, value)
@@ -90,6 +91,11 @@ class HashTable:
            else:
                position = (position + 1) % self.table_capacity
                self.probe += 1
+               self.probe_total += 1
+               if self.probe > self.probe_max:
+                   self.probe_max = self.probe
+
+
         self.rehash()
         self.__setitem__(key, value)
 
@@ -121,7 +127,7 @@ class HashTable:
                 new_table_capacity = self.primes[i]
                 break
         if new_table_capacity == self.table_capacity:
-            raise Exception("Not rehased the value")
+            raise Exception("Not rehashed the value")
         self.table_capacity = new_table_capacity
         old_array = self.array
         self.array = [None] * new_table_capacity
@@ -130,15 +136,16 @@ class HashTable:
         for i in range(len(old_array)):
             self.__setitem__(old_array[i][0], old_array[i][1])
         self.rehash_count += 1
+
         self.probe = 0
 
 
     def statistics(self):
         """
-
+        Returns the value of the counts of collision, probe, rehash
         :return: The Tuple having the value collision count, probe total, probe max, rehash count
         """
-        self.probe_max =max(self.probe_array)
-        self.probe_total =sum(self.probe_array)
+        #self.probe_max =max(self.probe_array)
+        #self.probe_total =sum(self.probe_array)
         value = (self.collision_count, self.probe_total, self.probe_max, self.rehash_count)
         return value

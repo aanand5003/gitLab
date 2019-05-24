@@ -29,6 +29,7 @@ class HashTable:
         value = 0
         for i in range(len(key)):
             value = (value*base + ord(key[i])) % self.table_capacity
+
         return value
 
     def __getitem__(self, key):
