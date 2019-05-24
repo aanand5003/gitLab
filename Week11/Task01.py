@@ -103,5 +103,5 @@ class HashTable:
         #print("old" + str(len(old_array)))
         #print(len(self.array))
         for i in range(len(old_array)):
-            self.__setitem__(old_array[i][0], old_array[i][0])
+            self.__setitem__(old_array[i][0], old_array[i][1])
 
