@@ -1,5 +1,5 @@
 from Task02_03 import load_dictionary
-from Task03 import *
+from Task03 import HashTable
 """
 _author_ = "Shourya Raj"
 _IdNumber_ = "28963555"
@@ -30,6 +30,7 @@ def test_load_dictionary():
 
     f = open(filename, "r")  # open file to be read
     for i in f:
+        i = i.strip()
         assert (x.__contains__(i)), "Should contains all values of the Text as a key"
 
     f.close()  # closing the file

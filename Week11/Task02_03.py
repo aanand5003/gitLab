@@ -67,7 +67,7 @@ def dictionary_function():
                 print("Collision: "+ str(value[0]) + " Probe Total: " + str(value[1])+" probe_max: " + str(value[2])+ " rehash count: " + str(value[3]))
 
 
-dictionary_function()
+# dictionary_function()
 
 """
     english_small.txt: 

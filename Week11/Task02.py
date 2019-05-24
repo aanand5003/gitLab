@@ -101,15 +101,17 @@ dictionary_function()
     250726          1000081         2.6056    
         
     Conclusion:
-    As we can see the from the graph value having less base and value having less difference in between the table capacity 
+
+    As we can see from the Table value, having less base and value having less difference in between the table capacity 
     and the base value displayed TimeOut.
     It is because of the more Collision occur while setting the value. The reason behind having more Collision is 
-    same hash value. According to the formula of Hash value, value =(value*base_value + ord(key[i])) % table_capacity, 
+    the same hash value. According to the formula of Hash value, value =(value*base_value + ord(key[i])) % table_capacity, 
     so the having less base_value gives less spectrum of the range position because of the bounded capacity.
-    In the case of the less difference in between the table capacity and the base value, collision happens always with
+    In the case of the less difference between the table capacity and the base value, collision happens always with
     start position and the end position because rehashing value always gives close to that position due to the formula 
     we are taking the modulus which is nearer to the value of the base value.
-    Hence those values's Time are TimeOut
+    Hence those values' Time is TimeOut.
+
     
        
     
