@@ -26,7 +26,7 @@ def load_dictionary(hash_table, filename):
     for i in f:
         i = i.strip()            # Important thing
         hash_table[i] = 1               # adding each line into the HashTable
-        if (timeit.default_timer() - start > 3):
+        if (timeit.default_timer() - start > 180):
             break
     f.close()                     # closing the file
     return hash_table
@@ -41,8 +41,8 @@ def dictionary_function():
     Function is to the analysing the data by printing tables.
     @complexity: The best case is O(n) and the worst case O(n^2)
     """
-    b = [1, 1, 27183, 250726]
-    Tablesize = [10, 250727, 402221, 1000081]
+    b = [1, 27183, 250726]
+    Tablesize = [ 250727, 402221, 1000081]
     filename = ["demo.txt",r"english_small.txt", "english_large.txt", "french.txt"]
 
     for i in range(len(filename)):
@@ -59,7 +59,7 @@ def dictionary_function():
                 load_dictionary(hash_value, name)             # load dictionary function
                 end_time = timeit.default_timer() - start_time
                 end_time = round(end_time, 4)
-                if end_time > 2:
+                if end_time > 180:
                     end_time = "TimeOut"
 
                 value = hash_value.statistics()

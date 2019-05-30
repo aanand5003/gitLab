@@ -4,7 +4,7 @@
 @created on: 31/05/2019
 
 """
-from Task03 import *
+from Task06_HashTable import *
 import string
 class Freq:
 

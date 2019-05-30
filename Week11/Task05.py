@@ -1,6 +1,6 @@
 from BST import *
-
-import math
+import sys
+sys.setrecursionlimit(4000)
 
 class HashTable:
 
@@ -25,7 +25,7 @@ class HashTable:
         base = self.hash_base
         value = 0
         for i in range(len(str(key))):
-            value = (value*base + ord(str(key[i]))) % self.table_capacity
+            value = (value*base + ord(key[i])) % self.table_capacity
 
         return value
 
@@ -42,7 +42,7 @@ class HashTable:
         if self.array[position] is None:
                 raise KeyError(key)
 
-        return self.array[position][1][key]
+        return self.array[position][0][key]
 
 
     def __setitem__(self, key, value):
@@ -59,19 +59,15 @@ class HashTable:
         if self.array[position] is None:
                my_tree = BinarySearchTree()
                my_tree[key] = value
-               self.count = 0
-               self.array[position] = [self.count, my_tree]
-
+               count = 0
+               self.array[position] = [my_tree, count]
                return
         else:
 
-               self.array[position][1][key] = value
-               #self.array[position][0] += 1
-               self.count+=1
+               self.array[position][0][key] = value
 
-        if(self.table_capacity <= self.count):
-            self.rehash()
-            self.__setitem__(key, value)
+               self.array[position][1] += 1
+
 
     def __contains__(self, key):
         """
@@ -84,7 +80,7 @@ class HashTable:
 
         if self.array[position] is None:
                return False
-        elif self.array[position][1][key]:
+        elif self.array[position][0][key]:
                 return True
 
     def rehash(self):
@@ -105,7 +101,7 @@ class HashTable:
         # print("old" + str(len(old_array)))
         # print(len(self.array))
         for i in range(len(old_array)):
-            self.__setitem__(old_array[i][0], old_array[i][1])
+            self.__setitem__(old_array[i][1], old_array[i][1])
         self.rehash_count += 1
 
         self.probe = 0
@@ -118,19 +114,12 @@ class HashTable:
         collision = 0
         probe_total = 0
         probe_max = 0
-
-        #self.probe_max =max(self.probe_array)
-        #self.probe_total =sum(self.probe_array)
         for i in range(len(self.array)):
             if self.array[i] is not None:
-                collision += self.array[i][0]
-                if (self.array[i][0] > 0):
-                    probe = self.maxDepth(self.array[i][1])
-                else:
-                    probe = 0
-                probe_total += probe
-                if(probe_max < probe):
-                    probe_max = probe
+               collision += self.array[i][1]
+               probe_total += self.array[i][0].getProbe()[0]
+               if (probe_max < self.array[i][0].getProbe()[1]):
+                   probe_max = self.array[i][0].getProbe()[1]
 
         value = (collision, probe_total, probe_max)
         return value

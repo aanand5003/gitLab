@@ -1,9 +1,3 @@
-"""
-@name: shourya raj
-@email id: sraj0008@student.monash.edu
-@created on: 31/05/2019
-
-"""
 class SearchTreeNode:
     def __init__(self, key, item=None, left=None, right=None):
         self.key = key
@@ -20,23 +14,32 @@ class SearchTreeNode:
     def set_child_for_key(self, key, child):
         self.children[int(key > self.key)] = child
 
-
 class BinarySearchTree:
     def __init__(self):
         self.root = None
-
+        self.probe_total = 0
+        self.probe_max = 0
     def __setitem__(self, key, item):
+        self.probe = 0
         self.root = self._setitem_aux(self.root, key, item)
+        if self.probe > self.probe_max:
+            self.probe_max = self.probe
+        self.probe_total += self.probe
 
     def _setitem_aux(self, node, key, item):
+
+
         if node is None:
             node = SearchTreeNode(key, item)
         else:
+
             if node.key == key:
-                # we replace
+                #we replace
                 node.item = item
             else:
-                node.set_child_for_key(key, self._setitem_aux(node.get_child_for_key(key), key, item))
+                self.probe += 1
+                node.set_child_for_key(key,
+                self._setitem_aux(node.get_child_for_key(key), key, item))
         return node
 
     def __getitem__(self, key):
@@ -57,7 +60,7 @@ class BinarySearchTree:
         except KeyError:
             return False
 
-    def __delitem__(self, key):
+    def  __delitem__(self, key):
         """We only implement a lazy deletion.
            See slides for "classic" deletion."""
         self._delitem_aux(self.root, key)
@@ -69,3 +72,5 @@ class BinarySearchTree:
             node.deleted = True
         else:
             self._delitem_aux(node.get_child_for_key(key), key)
+    def getProbe(self):
+        return [self.probe_total, self.probe_max]
