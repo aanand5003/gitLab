@@ -5,9 +5,10 @@ from Task06 import *
 
 def  word_percentage(filename):
     """
-
-    :param filename:
-    :return:
+     Creating the database and comparing the word with the database
+     precondition: filename should exit in the same file directory
+    :param filename: A string of the having txt file
+    :return: No return value
     """
 
     database = Freq()

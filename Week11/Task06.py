@@ -68,19 +68,19 @@ class Freq:
 
         return retVal
 
-x = Freq()
-#x.add_file("PrideAndPrejudice.txt")
-print("done 1")
-x.add_file("frankenstein.txt")
-# print("done 2")
-
-for i in range(5000):
-    if x.hash_table.array[i] is not None:
-          print(x.hash_table.array[i][0])
-          print(x.hash_table.array[i][1])
-
-print(x.max_word_appear )
-print(x.max_count)
-
-print(x.rarity("off"))
-print(x.rarity("the"))
+# x = Freq()
+# #x.add_file("PrideAndPrejudice.txt")
+# print("done 1")
+# x.add_file("frankenstein.txt")
+# # print("done 2")
+#
+# for i in range(5000):
+#     if x.hash_table.array[i] is not None:
+#           print(x.hash_table.array[i][0])
+#           print(x.hash_table.array[i][1])
+#
+# print(x.max_word_appear )
+# print(x.max_count)
+#
+# print(x.rarity("off"))
+# print(x.rarity("the"))

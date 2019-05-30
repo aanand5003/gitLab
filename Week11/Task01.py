@@ -28,7 +28,7 @@ class HashTable:
         base = self.hash_base
         value = 0
         for i in range(len(key)):
-            value = (value*base +   (key[i])) % self.table_capacity
+            value = (value*base +  ord (key[i])) % self.table_capacity
 
         return value
 

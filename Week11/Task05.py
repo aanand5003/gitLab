@@ -77,12 +77,10 @@ class HashTable:
         @complexity: The best case O(1) and the worst case O(M*n) where M is the length of the key.
         """
         position = self.hash(key)
-
         if self.array[position] is None:
-               return False
-        elif self.array[position][0][key]:
-                return True
-
+            return False
+        else:
+           return key in self.array[position][0]
     def rehash(self):
         """
         It increase the capacity and re-calcuating hash of each item according to the capacity

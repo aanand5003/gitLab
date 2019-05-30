@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f86aeb6-f04d-48e2-a1a6-b874271a624f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Task06_HashTable.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task06Test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BST.py" beforeDir="false" afterPath="$PROJECT_DIR$/BST.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task01.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task01.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task03.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task03.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task05.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task05.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task05_Dictionay.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task05_Dictionay.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task05_dict.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task05_dict.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task06.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task06.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task07.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task07.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task5_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/task5_test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,24 +21,59 @@
     <window id="1">
       <content type="file-editors">
         <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <leaf>
             <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/Task08.py">
+              <entry file="file://$PROJECT_DIR$/BST.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="2856">
-                    <caret line="168" column="13" selection-start-line="168" selection-start-column="13" selection-end-line="168" selection-end-column="13" />
+                  <state relative-caret-position="1020">
+                    <caret line="60" column="24" lean-forward="true" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
                   </state>
                 </provider>
               </entry>
             </file>
             <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/Task06Test.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="476">
+                    <caret line="152" column="13" selection-start-line="152" selection-start-column="13" selection-end-line="152" selection-end-column="13" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/Task08.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="1785">
+                    <caret line="168" column="13" selection-start-line="168" selection-start-column="13" selection-end-line="168" selection-end-column="13" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/Task08test.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="408">
+                  <state relative-caret-position="393">
                     <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
                     <folding>
                       <element signature="e#0#11#0" expanded="true" />
                     </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/Task06.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="180">
+                    <caret line="23" column="49" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="49" />
                   </state>
                 </provider>
               </entry>
@@ -52,20 +88,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Task01.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Task02_03.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="178">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
             </state>
           </provider>
         </entry>
@@ -73,20 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Task03.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="140" lean-forward="true" selection-start-line="140" selection-end-line="140" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Task05_Dictionay.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="641">
-              <caret line="61" column="33" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="203">
+              <caret line="114" column="48" lean-forward="true" selection-start-line="112" selection-start-column="12" selection-end-line="114" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -94,8 +106,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Task05.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="119" lean-forward="true" selection-start-line="13" selection-start-column="119" selection-end-line="13" selection-end-column="119" />
+            <state relative-caret-position="246">
+              <caret line="121" column="32" lean-forward="true" selection-start-line="121" selection-start-column="32" selection-end-line="121" selection-end-column="32" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -104,43 +116,36 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BST.py">
+        <entry file="file://$PROJECT_DIR$/Task02Test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-570">
-              <caret line="26" column="38" lean-forward="true" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Task05_dict.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1411">
-              <caret line="83" column="112" lean-forward="true" selection-start-line="83" selection-start-column="112" selection-end-line="83" selection-end-column="112" />
+            <state relative-caret-position="51">
+              <caret line="3" column="24" lean-forward="true" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
               <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Task06.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1105">
-              <caret line="65" column="17" lean-forward="true" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
-              <folding>
-                <element signature="e#91#111#0" expanded="true" />
+                <element signature="e#0#37#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Task06_HashTable.py">
+        <entry file="file://$PROJECT_DIR$/task5_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="136" column="40" lean-forward="true" selection-start-line="136" selection-start-column="11" selection-end-line="136" selection-end-column="40" />
+            <state relative-caret-position="187">
+              <caret line="19" column="46" lean-forward="true" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/two_words.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TestHashTable.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1547">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -148,8 +153,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Task07.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1309">
-              <caret line="77" column="20" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="20" />
+            <state relative-caret-position="119">
+              <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -168,6 +173,7 @@
       <find>time</find>
       <find>probe_total</find>
       <find>collision</find>
+      <find>name shoul</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -179,29 +185,30 @@
         <option value="$PROJECT_DIR$/../../week05/New folder/task03.py" />
         <option value="$PROJECT_DIR$/../Week08/Test04test.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_13.py" />
-        <option value="$PROJECT_DIR$/TestHashTable.py" />
         <option value="$PROJECT_DIR$/Task02Test.py" />
         <option value="$PROJECT_DIR$/Task02.py" />
-        <option value="$PROJECT_DIR$/Task03.py" />
         <option value="$PROJECT_DIR$/Task02_03.py" />
         <option value="$PROJECT_DIR$/Task04.py" />
-        <option value="$PROJECT_DIR$/Task01.py" />
-        <option value="$PROJECT_DIR$/Task07.py" />
         <option value="$PROJECT_DIR$/Task08.py" />
         <option value="$PROJECT_DIR$/Task08test.py" />
         <option value="F:/task5_2.py" />
         <option value="$PROJECT_DIR$/BST.py" />
-        <option value="$PROJECT_DIR$/task5_test.py" />
         <option value="$PROJECT_DIR$/Task05_Dictionay.py" />
-        <option value="$PROJECT_DIR$/Task05.py" />
         <option value="$PROJECT_DIR$/Task05_HashTable.py" />
         <option value="$PROJECT_DIR$/Task05_dict.py" />
-        <option value="$PROJECT_DIR$/Task06.py" />
         <option value="$PROJECT_DIR$/Task06_HashTable.py" />
+        <option value="$PROJECT_DIR$/Task03.py" />
+        <option value="$PROJECT_DIR$/Task06.py" />
+        <option value="$PROJECT_DIR$/Task07.py" />
+        <option value="$PROJECT_DIR$/Task05.py" />
+        <option value="$PROJECT_DIR$/TestHashTable.py" />
+        <option value="$PROJECT_DIR$/Task01.py" />
+        <option value="$PROJECT_DIR$/task5_test.py" />
+        <option value="$PROJECT_DIR$/Task06Test.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds">
     <option name="x" value="952" />
     <option name="width" value="977" />
     <option name="height" value="1038" />
@@ -250,28 +257,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Task06">
-    <configuration name="Task05_Dictionay" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Week11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Task05_Dictionay.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Unittests for Task06Test.Freq.test_add_file">
     <configuration name="Task06" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Week11" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -314,27 +300,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="task5_2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Week11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="F:/" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="F:/task5_2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="task5_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Week11" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -356,13 +321,41 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Unittests for Task06Test.Freq.test_add_file" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Week11" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;Task06Test.Freq.test_add_file&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in TestHashTable.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Week11" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/TestHashTable.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests for Task06Test.Freq.test_add_file" />
+        <item itemvalue="Python.task5_test" />
+        <item itemvalue="Python tests.Unittests in TestHashTable.py" />
         <item itemvalue="Python.Task06" />
         <item itemvalue="Python.Task06_HashTable" />
-        <item itemvalue="Python.Task05_Dictionay" />
-        <item itemvalue="Python.task5_test" />
-        <item itemvalue="Python.task5_2" />
       </list>
     </recent_temporary>
   </component>
@@ -380,47 +373,47 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_TestHashTable_TestHashTable_test_statistics - 2019.05.24 at 15h 03m 03s.xml">
-      <configuration name="Unittests for TestHashTable.TestHashTable.test_statistics" configurationId="tests" />
+    <history-entry file="Unittests_for_Task06Test_Freq_test_add_file - 2019.05.31 at 09h 11m 56s.xml">
+      <configuration name="Unittests for Task06Test.Freq.test_add_file" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_TestHashTable_TestHashTable_test_statistics - 2019.05.24 at 15h 04m 41s.xml">
-      <configuration name="Unittests for TestHashTable.TestHashTable.test_statistics" configurationId="tests" />
+    <history-entry file="Unittests_for_Task06Test_Freq_test_add_file - 2019.05.31 at 09h 12m 53s.xml">
+      <configuration name="Unittests for Task06Test.Freq.test_add_file" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_TestHashTable_TestHashTable_test_statistics - 2019.05.24 at 15h 04m 51s.xml">
-      <configuration name="Unittests for TestHashTable.TestHashTable.test_statistics" configurationId="tests" />
+    <history-entry file="Unittests_for_Task06Test_Freq_test_add_file - 2019.05.31 at 09h 14m 14s.xml">
+      <configuration name="Unittests for Task06Test.Freq.test_add_file" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_TestHashTable_TestHashTable_test_statistics - 2019.05.24 at 15h 05m 03s.xml">
-      <configuration name="Unittests for TestHashTable.TestHashTable.test_statistics" configurationId="tests" />
+    <history-entry file="Unittests_for_Task06Test_Freq_test_add_file - 2019.05.31 at 09h 14m 33s.xml">
+      <configuration name="Unittests for Task06Test.Freq.test_add_file" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_TestHashTable_TestHashTable_test_statistics - 2019.05.24 at 16h 05m 04s.xml">
-      <configuration name="Unittests for TestHashTable.TestHashTable.test_statistics" configurationId="tests" />
+    <history-entry file="Unittests_for_Task06Test_Freq_test_add_file - 2019.05.31 at 09h 15m 24s.xml">
+      <configuration name="Unittests for Task06Test.Freq.test_add_file" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_TestHashTable_TestHashTable - 2019.05.24 at 17h 01m 33s.xml">
-      <configuration name="Unittests for TestHashTable.TestHashTable" configurationId="tests" />
+    <history-entry file="Unittests_for_Task06Test_Freq_test_add_file - 2019.05.31 at 09h 15m 29s.xml">
+      <configuration name="Unittests for Task06Test.Freq.test_add_file" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_TestHashTable_TestHashTable - 2019.05.24 at 18h 06m 13s.xml">
-      <configuration name="Unittests for TestHashTable.TestHashTable" configurationId="tests" />
+    <history-entry file="Unittests_for_Task06Test_Freq_test_add_file - 2019.05.31 at 09h 20m 51s.xml">
+      <configuration name="Unittests for Task06Test.Freq.test_add_file" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_TestHashTable_TestHashTable - 2019.05.24 at 18h 10m 08s.xml">
-      <configuration name="Unittests for TestHashTable.TestHashTable" configurationId="tests" />
+    <history-entry file="Unittests_for_Task06Test_Freq_test_add_file - 2019.05.31 at 09h 22m 53s.xml">
+      <configuration name="Unittests for Task06Test.Freq.test_add_file" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_Task08test_TestTask8_test_load_dictionary - 2019.05.30 at 19h 08m 03s.xml">
-      <configuration name="Unittests for Task08test.TestTask8.test_load_dictionary" configurationId="tests" />
+    <history-entry file="Unittests_for_Task06Test_Freq_test_add_file - 2019.05.31 at 09h 23m 13s.xml">
+      <configuration name="Unittests for Task06Test.Freq.test_add_file" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_Task08test_TestTask8 - 2019.05.30 at 19h 08m 17s.xml">
-      <configuration name="Unittests for Task08test.TestTask8" configurationId="tests" />
+    <history-entry file="Unittests_for_Task06Test_Freq_test_add_file - 2019.05.31 at 09h 23m 19s.xml">
+      <configuration name="Unittests for Task06Test.Freq.test_add_file" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="762" y="0" width="781" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.5076008" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24917382" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3243626" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3982808" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.41501418" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -439,7 +432,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.9575071" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.04249292" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.41501418" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -477,18 +470,13 @@
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Task05_Dictionay.py</url>
-          <line>28</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/task5_test.py</url>
-          <line>4</line>
+          <line>138</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/task5_test.py</url>
-          <line>10</line>
+          <line>144</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
@@ -616,27 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Task02Test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret column="17" selection-start-column="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestHashTable.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Task01.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Task02_03.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -647,20 +614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Task07.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="77" column="20" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Task08.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2856">
-          <caret line="168" column="13" selection-start-line="168" selection-start-column="13" selection-end-line="168" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://F:/task5_2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
@@ -668,52 +621,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task5_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Task08test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Task05_Dictionay.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="61" column="33" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BST.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-570">
-          <caret line="26" column="38" lean-forward="true" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Task06_HashTable">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Task05.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="119" lean-forward="true" selection-start-line="13" selection-start-column="119" selection-end-line="13" selection-end-column="119" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Task05_dict.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -725,27 +634,130 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Task03.py">
+    <entry file="file://$PROJECT_DIR$/Task05_Dictionay.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="140" lean-forward="true" selection-start-line="140" selection-end-line="140" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Task06.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="65" column="17" lean-forward="true" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
+        <state relative-caret-position="594">
+          <caret line="61" column="33" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
           <folding>
-            <element signature="e#91#111#0" expanded="true" />
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Task06_HashTable.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="136" column="40" lean-forward="true" selection-start-line="136" selection-start-column="11" selection-end-line="136" selection-end-column="40" />
+        <state relative-caret-position="2363">
+          <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task07.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task02Test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="24" lean-forward="true" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task03.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="114" column="48" lean-forward="true" selection-start-line="112" selection-start-column="12" selection-end-line="114" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestHashTable.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1547">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task01.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task05.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="121" column="32" lean-forward="true" selection-start-line="121" selection-start-column="32" selection-end-line="121" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/two_words.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task08test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BST.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="60" column="24" lean-forward="true" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task08.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1785">
+          <caret line="168" column="13" selection-start-line="168" selection-start-column="13" selection-end-line="168" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/_jb_unittest_runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/unittest/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="99" selection-start-line="99" selection-end-line="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task06.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="23" column="49" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task5_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="19" column="46" lean-forward="true" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task06Test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="152" column="13" selection-start-line="152" selection-start-column="13" selection-end-line="152" selection-end-column="13" />
         </state>
       </provider>
     </entry>
