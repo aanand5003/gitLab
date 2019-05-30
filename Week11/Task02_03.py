@@ -1,9 +1,9 @@
-from Task03 import *
+from Task04 import *
 import timeit
 """
 @name: shourya raj
 @email id: sraj0008@student.monash.edu
-@created on: /05/2019
+@created on: 24/05/2019
 
 """
 
@@ -26,7 +26,7 @@ def load_dictionary(hash_table, filename):
     for i in f:
         i = i.strip()            # Important thing
         hash_table[i] = 1              # adding each line into the HashTable
-        if (timeit.default_timer() - start > 3):
+        if (timeit.default_timer() - start > 180):
             break
     f.close()                     # closing the file
     return hash_table
@@ -38,8 +38,8 @@ def test():
 
 def dictionary_function():
     """
-
-    @complexity: The best case is O(n) and the worst case O()
+    Function is to the analysing the data by printing tables.
+    @complexity: The best case is O(n) and the worst case O(n^2)
     """
     b = [1, 27183, 250726]
     Tablesize = [250727, 402221, 1000081]
@@ -47,11 +47,11 @@ def dictionary_function():
 
     for i in range(len(filename)):
         name = filename[i]
-        print(str(name)+ ": ")
+        print("\n"+str(name)+ ": ")
         b_string = "b"
         Tablesize_string = "TableSize"
         end_string = "End Time"
-        print("%-5s %-10s %-10s " %(b_string, Tablesize_string, end_string))
+        print("%-15s %-15s %-15s %-15s %-15s %-15s %-15s " %(b_string, Tablesize_string, end_string, "Collision: ", "Probe Total: ", "probe_max: ", "rehash count: "))
         for j in range(len(b)):
             for k in range(len(Tablesize)):
                 hash_value = HashTable(Tablesize[k], b[j])
@@ -59,78 +59,68 @@ def dictionary_function():
                 load_dictionary(hash_value, name)             # load dictionary function
                 end_time = timeit.default_timer() - start_time
                 end_time = round(end_time, 4)
-                if end_time > 3:
+                if end_time > 180:
                     end_time = "TimeOut"
-                print("%-5s %-10s %-10s " %(str(b[j]), str(Tablesize[k]), str(end_time)))
+
                 value = hash_value.statistics()
 
-                print("Collision: "+ str(value[0]) + " Probe Total: " + str(value[1])+" probe_max: " + str(value[2])+ " rehash count: " + str(value[3]))
+                print("%-15s %-15s %-15s %-15s %-15s %-15s %-15s " %(str(b[j]), str(Tablesize[k]), str(end_time), str(value[0]), str(value[1]),str(value[2]), str(value[3])))
 
 
-# dictionary_function()
 
-"""
+
+
+dictionary_function()
+
+""" 
+    TimeOut, when time > 60 seconds
     english_small.txt: 
-        b     TableSize  End Time   
-        1     250727     TimeOut    
-        Collision: 2217 Probe Total: 1948652 probe_max: 2402 rehash count: 0
-        1     402221     TimeOut    
-        Collision: 2212 Probe Total: 1940128 probe_max: 2402 rehash count: 0
-        1     1000081    TimeOut    
-        Collision: 2233 Probe Total: 1975584 probe_max: 2402 rehash count: 0
-        27183 250727     0.961      
-        Collision: 14263 Probe Total: 22542 probe_max: 21 rehash count: 0
-        27183 402221     0.9615     
-        Collision: 9012 Probe Total: 11749 probe_max: 13 rehash count: 0
-        27183 1000081    0.9472     
-        Collision: 3487 Probe Total: 3908 probe_max: 5 rehash count: 0
-        250726 250727     TimeOut    
-        Collision: 2007 Probe Total: 1975708 probe_max: 2041 rehash count: 0
-        250726 402221     0.9862     
-        Collision: 9011 Probe Total: 11811 probe_max: 10 rehash count: 0
-        250726 1000081    0.9802     
-        Collision: 3612 Probe Total: 4054 probe_max: 8 rehash count: 0
+    b               TableSize       End Time        Collision:      Probe Total:    probe_max:      rehash count:   
+    1               250727          TimeOut         8950            37789240        9172            0               
+    1               402221          TimeOut         9050            38658237        9247            0               
+    1               1000081         TimeOut         9052            38676569        9271            0               
+    27183           250727          1.0155          14263           22542           21              0               
+    27183           402221          0.963           9012            11749           13              0               
+    27183           1000081         0.9482          3487            3908            5               0               
+    250726          250727          TimeOut         8735            37975449        8777            0               
+    250726          402221          0.9768          9011            11811           10              0               
+    250726          1000081         0.9809          3612            4054            8               0               
+    
     english_large.txt: 
-        b     TableSize  End Time   
-        1     250727     TimeOut    
-        Collision: 2269 Probe Total: 1972898 probe_max: 2464 rehash count: 0
-        1     402221     TimeOut    
-        Collision: 2246 Probe Total: 1929153 probe_max: 2464 rehash count: 0
-        1     1000081    TimeOut    
-        Collision: 2237 Probe Total: 1910312 probe_max: 2464 rehash count: 0
-        27183 250727     2.9321     
-        Collision: 76622 Probe Total: 420481 probe_max: 278 rehash count: 0
-        27183 402221     2.5746     
-        Collision: 47799 Probe Total: 100117 probe_max: 43 rehash count: 0
-        27183 1000081    2.2457     
-        Collision: 19038 Probe Total: 24410 probe_max: 15 rehash count: 0
-        250726 250727     TimeOut    
-        Collision: 2021 Probe Total: 1995871 probe_max: 2089 rehash count: 0
-        250726 402221     2.4579     
-        Collision: 47902 Probe Total: 101113 probe_max: 51 rehash count: 0
-        250726 1000081    2.4976     
-        Collision: 19047 Probe Total: 24487 probe_max: 13 rehash count: 0
+    b               TableSize       End Time        Collision:      Probe Total:    probe_max:      rehash count:   
+    1               250727          TimeOut         9067            38170537        9228            0               
+    1               402221          TimeOut         8955            37207970        9112            0               
+    1               1000081         TimeOut         8901            36750459        9112            0               
+    27183           250727          2.9929          76622           420481          278             0               
+    27183           402221          2.4089          47799           100117          43              0               
+    27183           1000081         2.2515          19038           24410           15              0               
+    250726          250727          TimeOut         8618            36955118        8662            0               
+    250726          402221          2.5029          47902           101113          51              0               
+    250726          1000081         2.6112          19047           24487           13              0               
+    
     french.txt: 
-        b     TableSize  End Time   
-        1     250727     TimeOut    
-        Collision: 2461 Probe Total: 1984906 probe_max: 2393 rehash count: 0
-        1     402221     TimeOut    
-        Collision: 2473 Probe Total: 2007667 probe_max: 2393 rehash count: 0
-        1     1000081    TimeOut    
-        Collision: 2481 Probe Total: 2023261 probe_max: 2393 rehash count: 0
-        27183 250727     TimeOut    
-        Collision: 73449 Probe Total: 373146 probe_max: 212 rehash count: 0
-        27183 402221     2.7437     
-        Collision: 53376 Probe Total: 125307 probe_max: 64 rehash count: 0
-        27183 1000081    2.5225     
-        Collision: 21876 Probe Total: 30360 probe_max: 20 rehash count: 0
-        250726 250727     TimeOut    
-        Collision: 2239 Probe Total: 2028807 probe_max: 2072 rehash count: 0
-        250726 402221     2.8425     
-        Collision: 53024 Probe Total: 122168 probe_max: 36 rehash count: 0
-        250726 1000081    2.6475     
-        Collision: 21795 Probe Total: 30185 probe_max: 11 rehash count: 0
+    b               TableSize       End Time        Collision:      Probe Total:    probe_max:      rehash count:   
+    1               250727          TimeOut         10594           36422434        10991           0               
+    1               402221          TimeOut         10561           36117416        10991           0               
+    1               1000081         TimeOut         10727           37695386        10991           0               
+    27183           250727          3.5953          84347           563708          363             0               
+    27183           402221          2.8446          53376           125307          64              0               
+    27183           1000081         2.6596          21876           30360           20              0               
+    250726          250727          TimeOut         10402           36952373        9648            0               
+    250726          402221          2.8784          53024           122168          36              0               
+    250726          1000081         2.6827          21795           30185           11              0     
 
-    Conclusion:
+    Conclusion: 
+    According to the Table, when it's more collision and having the largest probing the base value and the Tablesize got the 
+    TimeOut ( TimeOut time > 60 sec) 
+    Longest Probe chain is the when b = 1 and the TableSize = 1000081 which does not differ from the rest of the value of 
+    b = 1 which disobey the promise of the HashTable( O(1)) the reason behind is because of the probe chain and the 
+    collision. Having b = 1 doesn't given a wide spectrum of hash values results, values insert closely in the Hash Table
+    and results to increment of the probe chain in every setitem. It better to use the base value which has larger value as
+    well as having larger table capacity.
+    The number of the lines always less the Table capacity, as I checked the maximum numbers of the line from the given text
+    file which is slightly less than the lowest value of the given table capacity. Hence there is no point to rehashing. 
+    
+        
 
 """

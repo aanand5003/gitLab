@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 :author: Graeme Gange
+:updated by: Shourya Raj
 """
 import math
 import unittest

@@ -1,9 +1,3 @@
-"""
-@name: shourya raj
-@email id: sraj0008@student.monash.edu
-@created on: /05/2019
-"""
-
 class HashTable:
 
 
@@ -53,14 +47,15 @@ class HashTable:
 
         """
         position = self.hash(key)
+        count = 0
         for _ in range(self.table_capacity):
             if self.array[position] is None:
                 raise KeyError(key)
             elif self.array[position][0] == key:
                  return self.array[position][1]
             else:
-
-                position = (position + 1) % self.table_capacity
+                count +=1
+                position = (position + count^2) % self.table_capacity
         raise KeyError(key)
 
     def __setitem__(self, key, value):
@@ -75,6 +70,7 @@ class HashTable:
         """
         position = self.hash(key)
         self.probe = 0
+        count = 0
         if self.array[position] is not None:             # It's a collision if there is no space
             self.collision_count += 1
 
@@ -90,7 +86,8 @@ class HashTable:
                 self.array[position] = (key, value)
                 return
            else:
-               position = (position + 1) % self.table_capacity
+               count +=1
+               position = (position + count*count) % self.table_capacity
                self.probe += 1
                self.probe_total += 1
                if self.probe > self.probe_max:
@@ -108,6 +105,7 @@ class HashTable:
         :return: No return Value
         @complexity: The best case O(1) and the worst case O(M*n) where M is the length of the key.
         """
+        count = 0
         position = self.hash(key)
         for _ in range(self.table_capacity):
             if self.array[position] is None:
@@ -115,8 +113,8 @@ class HashTable:
             elif self.array[position][0] == key:
                 return True
             else:
-
-                position = (position + 1) % self.table_capacity
+                count +=1
+                position = (position + count^2) % self.table_capacity
 
     def rehash(self):
         """
@@ -151,3 +149,47 @@ class HashTable:
         #self.probe_total =sum(self.probe_array)
         value = (self.collision_count, self.probe_total, self.probe_max, self.rehash_count)
         return value
+
+"""
+
+
+english_small.txt: 
+b               TableSize       End Time        Collision:      Probe Total:    probe_max:      rehash count:   
+1               250727          14.5686         83681           8219682         397             0               
+1               402221          14.4037         83678           8067054         376             0               
+1               1000081         13.4624         83673           7741679         345             0               
+27183           250727          0.9559          14286           20540           9               0               
+27183           402221          0.9372          8995            11231           7               0               
+27183           1000081         0.926           3491            3877            4               0               
+250726          250727          51.2911         83938           27293770        1054            0               
+250726          402221          0.9692          8992            11214           6               0               
+250726          1000081         0.9627          3610            4000            4               0               
+
+english_large.txt: 
+b               TableSize       End Time        Collision:      Probe Total:    probe_max:      rehash count:   
+1               250727          91.681          194056          48392653        1366            0               
+1               402221          78.0597         194055          42424774        931             0               
+1               1000081         67.5036         194036          36911515        748             0               
+27183           250727          2.5781          76725           210344          42              0               
+27183           402221          2.3505          47958           81798           15              0               
+27183           1000081         2.2185          19062           23590           7               0               
+ 250726          250727          TimeOut         145995          89778147        2066            0               
+250726          402221          2.3538          47956           82298           17              0               
+250726          1000081         2.3019          19075           23701           7               0               
+
+french.txt: 
+b               TableSize       End Time        Collision:      Probe Total:    probe_max:      rehash count:   
+1               250727          55.7864         201323          28945661        883             0               
+1               402221          48.0317         201322          25769110        631             0               
+1               1000081         42.1623         201297          23157225        522             0               
+27183           250727          2.9725          84580           249262          40              0               
+27183           402221          2.7204          53439           95921           16              0               
+27183           1000081         2.5178          21891           28352           7               0               
+250726          250727          TimeOut         186758          87354320        2226            0               
+250726          402221          2.7981          53279           94897           16              0               
+250726          1000081         2.6607          21846           28309           7               0               
+
+Process finished with exit code 0
+
+
+"""

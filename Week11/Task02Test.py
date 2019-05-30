@@ -9,6 +9,11 @@ _date_ = "24/05/2019"
 
 
 def test_load_dictionary():
+    """
+    Test the value the function of the load_dictionary
+    @complexity: The best and the worst case is O(n) where n is the length of the number of lines in the text file.
+    """
+
     filename = "error.txt"
     x = HashTable(2,1)
     try:

@@ -1,9 +1,6 @@
-"""
-@name: shourya raj
-@email id: sraj0008@student.monash.edu
-@created on: 24/05/2019
+from BST import *
 
-"""
+import math
 
 class HashTable:
 
@@ -27,8 +24,8 @@ class HashTable:
         """
         base = self.hash_base
         value = 0
-        for i in range(len(key)):
-            value = (value*base +   (key[i])) % self.table_capacity
+        for i in range(len(str(key))):
+            value = (value*base + ord(str(key[i]))) % self.table_capacity
 
         return value
 
@@ -41,14 +38,12 @@ class HashTable:
 
         """
         position = self.hash(key)
-        for _ in range(self.table_capacity):
-            if self.array[position] is None:
+
+        if self.array[position] is None:
                 raise KeyError(key)
-            elif self.array[position][0] == key:
-                 return self.array[position][1]
-            else:
-                position = (position + 1) % self.table_capacity
-        raise KeyError(key)
+
+        return self.array[position][1][key]
+
 
     def __setitem__(self, key, value):
         """
@@ -58,20 +53,25 @@ class HashTable:
         :return: No return value
         @post_condition: Value would be assigned in the array
         """
-        position = self.hash(key)
-        for _ in range(self.table_capacity):
-           if self.array[position] is None:
-               self.array[position] = (key, value)
-               self.count += 1
-               return
-           elif self.array[position][0] == key:
-                self.array[position] = (key, value)
-                return
-           else:
-               position = (position + 1) % self.table_capacity
-        self.rehash()
-        self.__setitem__(key, value)
 
+        position = self.hash(key)
+
+        if self.array[position] is None:
+               my_tree = BinarySearchTree()
+               my_tree[key] = value
+               self.count = 0
+               self.array[position] = [self.count, my_tree]
+
+               return
+        else:
+
+               self.array[position][1][key] = value
+               #self.array[position][0] += 1
+               self.count+=1
+
+        if(self.table_capacity <= self.count):
+            self.rehash()
+            self.__setitem__(key, value)
 
     def __contains__(self, key):
         """
@@ -81,30 +81,72 @@ class HashTable:
         @complexity: The best case O(1) and the worst case O(M*n) where M is the length of the key.
         """
         position = self.hash(key)
-        for _ in range(self.table_capacity):
-            if self.array[position] is None:
-               return False
-            elif self.array[position][0] == key:
-                return True
-            else:
 
-                position = (position + 1) % self.table_capacity
+        if self.array[position] is None:
+               return False
+        elif self.array[position][1][key]:
+                return True
 
     def rehash(self):
         """
-
         It increase the capacity and re-calcuating hash of each item according to the capacity
-        @complexity: The best case and the worst case O(n) where n is the new capacity
+        @complexity: The best case O(n) and the worst case O(n + i ) where i is prime array length , n is the length of
+        the old array
         """
         for i in range(len(self.primes)):
             if self.primes[i] > self.table_capacity * 2:
                 new_table_capacity = self.primes[i]
                 break
+        if new_table_capacity == self.table_capacity:
+            raise Exception("Not rehashed the value")
         self.table_capacity = new_table_capacity
         old_array = self.array
         self.array = [None] * new_table_capacity
-        #print("old" + str(len(old_array)))
-        #print(len(self.array))
+        # print("old" + str(len(old_array)))
+        # print(len(self.array))
         for i in range(len(old_array)):
             self.__setitem__(old_array[i][0], old_array[i][1])
+        self.rehash_count += 1
 
+        self.probe = 0
+
+    def statistics(self):
+        """
+        Returns the value of the counts of collision, probe, rehash
+        :return: The Tuple having the value collision count, probe total, probe max, rehash count
+        """
+        collision = 0
+        probe_total = 0
+        probe_max = 0
+
+        #self.probe_max =max(self.probe_array)
+        #self.probe_total =sum(self.probe_array)
+        for i in range(len(self.array)):
+            if self.array[i] is not None:
+                collision += self.array[i][0]
+                if (self.array[i][0] > 0):
+                    probe = self.maxDepth(self.array[i][1])
+                else:
+                    probe = 0
+                probe_total += probe
+                if(probe_max < probe):
+                    probe_max = probe
+
+        value = (collision, probe_total, probe_max)
+        return value
+
+    def maxDepth(self, node):
+        if node is None:
+            return 0
+
+        else:
+
+            # Compute the depth of each subtree
+            lDepth = self.maxDepth()
+            rDepth = self.maxDepth()
+
+            # Use the larger one
+            if (lDepth > rDepth):
+                return lDepth + 1
+            else:
+                return rDepth + 1

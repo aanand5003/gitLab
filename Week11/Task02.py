@@ -26,18 +26,17 @@ def load_dictionary(hash_table, filename):
     for i in f:
         i = i.strip()
         hash_table[i] = 1 # adding each line into the HashTable
-        if (timeit.default_timer() - start > 3):
+        if (timeit.default_timer() - start > 60):
             break
     f.close()                     # closing the file
     return hash_table
 
-def test():
-    hash = HashTable()
-    load_dictionary(hash, "english_small.txt")
+
 def dictionary_function():
     """
 
-    :return:
+     Function is to the analysing the data by printing tables.
+     @complexity: The best case is O(n) and the worst case O(n^2)
     """
     b = [1, 27183, 250726]
     Tablesize = [250727, 402221, 1000081]
@@ -57,11 +56,11 @@ def dictionary_function():
                 load_dictionary(hash_value, name)
                 end_time = timeit.default_timer() - start_time
                 end_time = round(end_time, 4)
-                if end_time > 3:
+                if end_time > 60:
                     end_time = "TimeOut"
                 print("%-15s %-15s %-15s " % (str(b[j]), str(Tablesize[k]), str(end_time)))
 
-dictionary_function()
+# dictionary_function()
 
 """
      english_small.txt: 
@@ -69,36 +68,44 @@ dictionary_function()
     1               250727          TimeOut         
     1               402221          TimeOut         
     1               1000081         TimeOut         
-    27183           250727          0.9234          
-    27183           402221          0.9123          
-    27183           1000081         0.895           
+    27183           250727          0.9362          
+    27183           402221          0.916           
+    27183           1000081         0.9043          
     250726          250727          TimeOut         
-    250726          402221          0.9531          
-    250726          1000081         0.9296          
+    250726          402221          1.0235          
+    250726          1000081         1.0376          
     
     english_large.txt: 
     b               TableSize       End Time        
     1               250727          TimeOut         
     1               402221          TimeOut         
     1               1000081         TimeOut         
-    27183           250727          2.4747          
-    27183           402221          2.1436          
-    27183           1000081         2.1159          
+    27183           250727          2.7563          
+    27183           402221          2.3357          
+    27183           1000081         2.2055          
     250726          250727          TimeOut         
-    250726          402221          2.3454          
-    250726          1000081         2.1334          
+    250726          402221          2.3587          
+    250726          1000081         2.2112          
     
     french.txt: 
     b               TableSize       End Time        
     1               250727          TimeOut         
     1               402221          TimeOut         
     1               1000081         TimeOut         
-    27183           250727          TimeOut         
-    27183           402221          2.592           
-    27183           1000081         2.6035          
+    27183           250727          2.9419          
+    27183           402221          2.6587          
+    27183           1000081         2.5204          
     250726          250727          TimeOut         
-    250726          402221          2.6692          
-    250726          1000081         2.6056    
+    250726          402221          2.8709          
+    250726          1000081         2.8885     
+        
+    Analysis:
+    According to the Table the value of base is greater as well as value having more difference in between the table capacity 
+    and base value gives fastest Hashing. In my point of view, the formula we are using to get the hash value is depended
+    upon two things base value and the table capacity, the greater the base value and the greater the Table capacity as well as 
+    having more difference in between the table capacity gives wide spectrum of the hash value means less collision and 
+    even less probing
+    
         
     Conclusion:
 
@@ -109,13 +116,11 @@ dictionary_function()
     so the having less base_value gives less spectrum of the range position because of the bounded capacity.
     In the case of the less difference between the table capacity and the base value, collision happens always with
     start position and the end position because rehashing value always gives close to that position due to the formula 
-    we are taking the modulus which is nearer to the value of the base value.
+    we are taking the modulus which is nearer to the value of the base value. Results give more collision and probe increases
+    as it add more item in the array.
     Hence those values' Time is TimeOut.
 
     
        
     
-    
-    
-
 """
