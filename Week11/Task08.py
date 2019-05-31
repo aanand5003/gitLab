@@ -150,21 +150,27 @@ class HashTable:
         return value
 
     def __delete__(self, key):
-        if self.__contains__(key):
-            hash_value = self.hash(key)
-            for i in range(self.table_capacity):
-                if self.array[hash_value][0] == key:
-                    self.array[hash_value] = None
-                    break
-                hash_value = (hash_value + 1) % self.table_capacity
-
-            hash_value = (hash_value + 1) % self.table_capacity
-
-            while self.array[hash_value] is not None:
-                temp_key = self.array[hash_value][0]
-                temp_item = self.array[hash_value][1]
-                self.array[hash_value] = None
-                self.__setitem__(temp_key, temp_item)
-                hash_value = (hash_value + 1) % self.table_capacity
-        else:
+        """
+        Delete the key from the list/HashTable and shift the elements
+        :precondition: Key should exist in the hashtable otherwise keyerror
+        :param key: A key should be a string
+        :return: No return
+        """
+        if not self.__contains__(key):
             raise KeyError("the key does not exist")
+        position = self.hash(key)
+        for i in range(len(self.array)):
+            if self.array[position][0] == key:
+                self.array[position] = None               # Making the position None to delete it
+                break
+            position = (position + 1) % self.table_capacity
+
+        position = (position + 1) % self.table_capacity      # Position from where need to start shift +1 from the previous
+
+        while self.array[position] is not None:             # Loop till the First None cod
+                temp_key = self.array[position][0]
+                temp_item = self.array[position][1]
+                self.array[position] = None
+                self.__setitem__(temp_key, temp_item)
+                position = (position + 1) % self.table_capacity
+

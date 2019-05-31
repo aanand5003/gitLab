@@ -84,3 +84,5 @@ class Freq:
 #
 # print(x.rarity("off"))
 # print(x.rarity("the"))
+# x = Freq()
+# x.add_file("same_word.txt")
