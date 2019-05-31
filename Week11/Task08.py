@@ -1,7 +1,7 @@
 """
 @name: shourya raj
 @email id: sraj0008@student.monash.edu
-@created on: /05/2019
+@created on: 31/05/2019
 """
 
 
@@ -151,10 +151,12 @@ class HashTable:
 
     def __delete__(self, key):
         """
-        Delete the key from the list/HashTable and shift the elements
+         Delete the key from the list/HashTable and shift the elements
         :precondition: Key should exist in the hashtable otherwise keyerror
         :param key: A key should be a string
         :return: No return
+        :complexity: THe best case would be the O(1) and the Worst case O(n) where n in the table capacity
+                      (length of the HashTable)
         """
         if not self.__contains__(key):
             raise KeyError("the key does not exist")
@@ -165,9 +167,9 @@ class HashTable:
                 break
             position = (position + 1) % self.table_capacity
 
-        position = (position + 1) % self.table_capacity      # Position from where need to start shift +1 from the previous
+        position = (position + 1) % self.table_capacity   # Position from where need to start shift +1 from the previous
 
-        while self.array[position] is not None:             # Loop till the First None cod
+        while self.array[position] is not None:           # Loop till the First None cod
                 temp_key = self.array[position][0]
                 temp_item = self.array[position][1]
                 self.array[position] = None

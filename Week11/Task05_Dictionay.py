@@ -43,7 +43,7 @@ def dictionary_function():
     """
     b = [1, 27183, 250726]
     Tablesize = [ 250727, 402221, 1000081]
-    filename = ["demo.txt",r"english_small.txt", "english_large.txt", "french.txt"]
+    filename = ["english_small.txt", "english_large.txt", "french.txt"]
 
     for i in range(len(filename)):
         name = filename[i]

@@ -27,9 +27,7 @@ class TestHashTable(unittest.TestCase):
                               ("defabc", 309)]:
             self.assertEqual(x.hash(key), expect, msg=f"Unexpected hash with base 17 and key {key}.")
 
-    # The tests for __contains__ and __getitem__ use __setitem__, so we don't make any assumptions
-    # about the underlying array representation. Remember to define your own tests for __setitem__
-    # (and rehash)
+
     def test_contains(self):
         x = Task05.HashTable(1024, 1)
 

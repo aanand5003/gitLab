@@ -5,17 +5,23 @@ from Task06 import *
 
 def  word_percentage(filename):
     """
-     Creating the database and comparing the word with the database
+     Creating the database and comparing the words of the other file with the saved database
      precondition: filename should exit in the same file directory
     :param filename: A string of the having txt file
     :return: No return value
+    @complexity:@comlexity: The best case is O(h) and the Worst case is (m*n*o)
+                    where h is the depth of the binary tree.
+                    m is number of lines in the text file,
+                    n is the number of words in each line
+                    and o is the number of the nodes in the binary tree.
+
     """
 
-    database = Freq()
+    database = Freq()                        # Making Database
     database.add_file("frankenstein.txt")
-    print("one file saved in the database")
+    print("One file saved in the database")
     database.add_file("PrideandPrejudice.txt")
-    print("second file saved in the database")
+    print("Second file saved in the database")
     database.add_file("WarAndPeace.txt")
     print("Third file saved in the database")
 
@@ -40,7 +46,6 @@ def  word_percentage(filename):
         i = i.strip()
         i = i.translate(edit)
         array_of_words = i.split()
-        print(word_count)
         for j in range(len(array_of_words)):
             word_lower_case = array_of_words[j].lower()
             word_lower_case = word_lower_case.strip("“")  # The unusual punctuation handing
@@ -58,28 +63,20 @@ def  word_percentage(filename):
                 array[2] += 1
             elif database.rarity(word_lower_case) == 3:
                 array[3] += 1
-    print(array)
-    print(database.max_count)
+
     print("%-15s %-15s %-15s %-15s  " % (  "common ", "uncommon ", "rare ", "misspelling "))
-    print("%-15s %-15s %-15s %-15s  " % (  str(array[0]/word_count *100), str(array[1]/word_count * 100),
-                                               str(array[2]/word_count * 100), str(array[3]/word_count * 100)))
+    print("%-15s %-15s %-15s %-15s  " % (  str(round(array[0]/word_count *100,2)), str(round(array[1]/word_count * 100,2)),
+                                               str(round(array[2]/word_count * 100,2)), str(round(array[3]/word_count * 100,2))))
 
 word_percentage("ATaleOfTwoCities.txt")
 
-"""
-78083
-78083
-[46150, 15959, 15974, 0]
-43422
-common          uncommon        rare            misspelling      
-59.103774189004014 20.43850774176197 20.45771806923402 0.0    
-"""
+
 
 """
-ATaleOfTwoCities.txt
-138836
-[85675, 26108, 20383, 6680]
-43422
+Data for the  rarity method
+
+ATaleOfTwoCities.txt is compared with the stored database
+
 common          uncommon        rare            misspelling      
-61.705054520836036 18.80356654134797 14.680293274563185 4.811085663252813  
+61.71           18.8            14.68           4.81   
 """

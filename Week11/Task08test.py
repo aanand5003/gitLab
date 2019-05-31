@@ -5,19 +5,16 @@ import Task08
 
 class TestTask8(unittest.TestCase):
     def test_load_dictionary(self):
-        x=Task08.HashTable(7)
-        x["a"] = 1
-        x["b"] = 2
-        x["c"] = 3
-        x["g"] = 6
-        x["j"] = 4
-        x["k"] = 5
+        x=Task08.HashTable(5)
+        x["1"] = 1
+        x["2"] = 2
+        x["3"] = 3
+        x["4"] = 4
 
-        self.assertEqual(x.array[1][0], "c", msg="c should be in the second position of the hash table")
-        self.assertEqual(x.array[2][0], "j", msg="j should be in the second position of the hash table but probed once to the third")
-        self.assertEqual(x.array[3][0], "k", msg="k should be in the third position of the hash table but probed twice to fourth")
-        # so the letters are in the following order in the array
-        # [b,c,j,k,None,g,a]
+         # [1,2,3,4, "None"] stored like this due to the hash_value
+        self.assertEqual(x.array[1][0], "1", msg="1 should be at Oth position")
+        self.assertEqual(x.array[2][0], "2", msg="2 should be at 1st position")
+        self.assertEqual(x.array[3][0], "3", msg="3 should be at 2nd position")
 
         x.__delete__("c")
         #
