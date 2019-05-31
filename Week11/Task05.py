@@ -122,18 +122,3 @@ class HashTable:
         value = (collision, probe_total, probe_max)
         return value
 
-    def maxDepth(self, node):
-        if node is None:
-            return 0
-
-        else:
-
-            # Compute the depth of each subtree
-            lDepth = self.maxDepth()
-            rDepth = self.maxDepth()
-
-            # Use the larger one
-            if (lDepth > rDepth):
-                return lDepth + 1
-            else:
-                return rDepth + 1

@@ -93,6 +93,14 @@ class TestHashTable(unittest.TestCase):
     self.assertEqual(x.array[1][1], "value1", msg= "After rehasing the value postion should be different " )
     self.assertRaises(Exception, msg= " Should have raised error")
 
+    x = Task01.HashTable(1)
+    for i in range(1001):
+      x[str(i)] = i
+      self.assertEqual(x.table_capacity % 2 == 0, False, msg= "It should be prime number every time." )
+
+    self.assertEqual(x[str(1000)], 1000, msg = "It should be equals to the 1000")
+
+
   def test_statistics(self):
     x = Task03.HashTable(1)
     x["a"] = "value1"
@@ -111,7 +119,7 @@ class TestHashTable(unittest.TestCase):
     self.assertEqual(return_value[2], 2, msg= "Probe Max is not calculating properly" )  # Probe Max
 
     x = Task03.HashTable(3)
-    for i in range(1000):
+    for i in range(1001):
       key = str(i)
       x[key] = 100
     self.assertEqual(x.table_capacity, 1931, msg= "Rehasing is not working properly")  # checking rehashing value

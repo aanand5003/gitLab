@@ -8,7 +8,7 @@
 class HashTable:
 
 
-    def  __init__(self, table_capacity = 101, hash_base =31):
+    def  __init__(self, table_capacity = 101, hash_base = 31):
        self.table_capacity = table_capacity
        self.array = [None]*table_capacity
        self.hash_base = hash_base
@@ -24,6 +24,7 @@ class HashTable:
 
         :param key: Any string value
         :return: The calculated hash value with resolved collision
+        @complexity: The best case 0(1) and the worst case O(n)
         """
         base = self.hash_base
         value = 0
@@ -37,6 +38,7 @@ class HashTable:
 
         :param key: Any string value
         :return:  Value associated with the key
+       @complexity: The best case O(1) and the worst case(n) where n is the table size
         @post_condition: If the key is invalid then return KeyError
 
         """
@@ -56,6 +58,8 @@ class HashTable:
         :param key: An String Value
         :param value: Any value need to set as associate with the key
         :return: No return value
+        @complexity: The best case O(1) and the worst case O(m*(n+i)) where i is prime array length , n is the length of
+        the old array
         @post_condition: Value would be assigned in the array
         """
         position = self.hash(key)
